@@ -1,0 +1,81 @@
+{% extends "./layout/base.twig" %}
+
+{% block content %}
+
+    {% include "./blocks/banner.twig" with {'block': pages.home.banner } %}
+
+    <div class="carousel" id="come-funziona">
+        <div class="carousel__mockup">
+            <div class="carousel__mockup__outer">
+                <div class="swiper swiper-video">
+                    <div class="swiper-wrapper">
+                        {% for slide in pages.home.carousel.slides %}
+                            <div class="carousel-slide-video swiper-slide">
+                                <video class="carousel-slide-video__desktop" muted playsinline>
+                                    <source src="{{config.paths.build.base}}/assets/video/{{slide.video}}.mp4" type="video/mp4">
+                                </video>
+                                <video class="carousel-slide-video__mobile" muted playsinline>
+                                    <source src="{{config.paths.build.base}}/assets/video/{{slide.video}}-mobile.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <img src="{{config.paths.img}}/{{pages.home.carousel.desktop.img}}" alt="" class="browser">
+                <img src="{{config.paths.img}}/{{pages.home.carousel.mobile.img}}" alt="" class="phone">
+            </div>
+        </div>
+        <div class="carousel__slide-text">
+            <span class="carousel-bar"><span style="width: 0%"></span></span>
+            <div class="swiper swiper-text">
+                <div class="swiper-wrapper">
+                    {% for slide in pages.home.carousel.slides %}
+                        <div class="carousel-slide swiper-slide">
+                            <div class="carousel-slide__content">
+                                <span class="carousel-slide__indx">{{loop.index}}</span>
+                                <p>{{slide.text}}</p>
+                            </div>
+                            <div class="carousel-slide__meta">
+                                <span><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0ZM1.291 9a7.709 7.709 0 1 1 15.418 0A7.709 7.709 0 0 1 1.291 9Zm8.388-4.077a.68.68 0 0 0-1.359 0V9c0 .18.072.353.2.48l2.717 2.718a.68.68 0 0 0 .961-.96L9.68 8.718V4.924Z" fill="#fff"/></svg>tempo richiesto:<span>{{slide.time}}</span></span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="infortunio-sul-lavoro">
+        {% include "./blocks/columns.twig" with {"block": pages.home.columns_1, "type": "default" } %}
+        {% include "./blocks/columns.twig" with {"block": pages.home.columns_2, "type": "inverted" } %}
+    </div>
+    
+
+    <div class="row card-list-block" id="certificati">
+        <div class="columns lg:justify-center">
+            <div class="w-full column">
+                <h2 class="md:text-center">{{pages.home.certificati.content.title}}</h2>
+            </div>
+            <div class="w-full lg:w-5/6 column mt-10">
+                <div class="card-wrapper">
+                    {% for card in pages.home.certificati.content.list %}
+                        <div class="card">
+                            <div class="card__img">
+                                <img src="{{config.paths.img}}/{{card.img}}" alt="{{card.title}} icona">
+                            </div>
+                            <div class="card__content">
+                                <h3>{{card.title}}</h3>
+                                <p>{{card.text}}</p>
+                            </div>
+                        </div>                    
+                    {% endfor %}
+                </div>
+                <div class="text-center mt-10">
+                    <a href="{{pages.home.certificati.button.link}}" class="btn {{pages.home.certificati.button.class}}">{{pages.home.certificati.button.text}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

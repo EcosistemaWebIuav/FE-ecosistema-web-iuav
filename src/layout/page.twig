@@ -1,0 +1,11 @@
+{% extends "./base.twig" %}
+
+{% block content_wrapper %}
+
+    {% block banner %}
+        {% include "../components/banner.twig" with {'content': page.banner.content, 'type': bannerType, 'size': bannerSize, 'video': page.banner.video, 'buttons': page.banner.buttons} %}
+    {% endblock %}
+
+    {% block content %}{% endblock %} 
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% block html_head_container %}
+	{% include 'html-header.twig' %}
+	{% block head %}{% endblock %}
+    </head>
+{% endblock %}
+
+	
+    <body data-template="base.twig">
+
+		{% include 'header.twig' %}
+
+		<section id="content" role="main" class="content-wrapper">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</section>
+
+		{% block footer %}
+			{% include 'footer.twig' %}
+		{% endblock %}
+
+		{% include "script-footer.twig" %}
+	</body>
+
+</html>

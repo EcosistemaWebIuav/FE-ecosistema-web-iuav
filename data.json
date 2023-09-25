@@ -1,0 +1,23 @@
+{
+    "config": {
+        "paths": {
+            "css": "./assets/css",
+            "js": "./assets/js",
+            "plugins": "./assets/js/vendor",
+            "img": "./assets/img"
+        }
+    },
+    "site": {
+        "title": "Università Iuav di Venezia",
+        "email": "info@iuav.it",
+        "language_attributes": "it",
+    },
+    "sections": {
+        "header": {
+        },
+        "footer": {
+        }
+    },
+    "blocks": {},
+    "pages": {}
+}
