@@ -10,7 +10,7 @@
     "site": {
         "title": "Università Iuav di Venezia",
         "email": "info@iuav.it",
-        "language_attributes": "it",
+        "language_attributes": "it"
     },
     "sections": {
         "header": {
