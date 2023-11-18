@@ -4,16 +4,23 @@
     </head>
 {% endblock %}
 
-	
-    <body data-template="base.twig">
+    <body data-template="base.twig" class="{{bodyClasses}}">
+
+		<a href="{{site.url}}" class="site-logo" id="site-logo">
+			{% include "../assets/img/logo.svg" %}
+		</a>
+
+		<div id="overlay"></div>
 
 		{% include 'header.twig' %}
 
-		<section id="content" role="main" class="content-wrapper">
+		<main id="content" role="main" class="content">
+			{% block breadcrumbs %}{% endblock %}
+			{% block banner %}{% endblock %}
 			{% block content %}
 				Sorry, no content
 			{% endblock %}
-		</section>
+		</main>
 
 		{% block footer %}
 			{% include 'footer.twig' %}

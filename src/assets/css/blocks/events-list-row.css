@@ -1,0 +1,47 @@
+.block-events-list-row{
+    @apply grid-container;
+    &__title{
+        @apply py-3 border-t border-black;
+        h3{
+            @apply text-size-xl;
+        }
+    }
+    &-item{
+        @apply grid grid-cols-12 items-center gap-x-5 py-2.5 border-t border-grey-200 min-h-[96px];
+        &__img{
+            @apply h-full hidden relative;
+            img{
+                @apply absolute top-0 left-0 w-full h-full object-cover;
+            }
+        }
+        &__date{
+            grid-area: 1 / 1 / 2 / 7;
+            span{
+                @apply block;
+                &:first-child{
+                    @apply font-bold;
+                }
+            }
+        }
+        &__title{
+            grid-area: 1 / 7 / 2 / 13;
+            p{
+                @apply inline text-size-md-lg font-bold;
+            }
+            span{
+                @apply text-grey-300 ml-4;
+            }
+        }
+        &:hover{
+            .block-events-list-row-item{
+                &__img{
+                    grid-area: 1 / 1 / 2 / 3;
+                    @apply block;
+                }
+                &__date{
+                    grid-area: 1 / 3 / 2 / 7;
+                }
+            }
+        }
+    }
+}

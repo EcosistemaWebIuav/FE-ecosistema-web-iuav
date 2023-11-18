@@ -1,0 +1,23 @@
+.breadcrumbs{
+    @apply grid-container mt-[6.75vw] mb-[2.75vw];
+    ul{
+        @apply flex;
+        li{
+            @apply text-size-lg;
+            &:not(:last-child){
+                &::after{
+                    content: '/';
+                    @apply mx-[0.75vw];
+                }
+            }
+            a, span{
+                @apply text-grey-300;
+            }
+            &:last-child{
+                span{
+                    @apply text-black;
+                }
+            }
+        }
+    }
+}

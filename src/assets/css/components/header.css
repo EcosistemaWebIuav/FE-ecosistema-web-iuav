@@ -1,2 +1,99 @@
 .site-header{
+    transition: transform .5s ease;
+    @apply z-50;
+    @apply sticky top-0 z-50 translate-y-0;
+    &.is-hidden{
+        @apply translate-y-[-100%];
+    }
+    &-topbar{
+        @apply bg-black text-white py-[0.75vw] flex items-center;
+        &__container{
+            @apply flex items-center justify-between text-size-sm;
+            nav{
+                ul{
+                    @apply flex items-center;
+                    li{
+                        a{
+                        }
+                        &:not(:last-child){
+                            @apply mr-5;
+                        }
+                    }
+                }
+            }
+        }
+        &__actions{
+            @apply flex items-center;
+            .site-header-topbar__lang{
+                @apply mr-4;
+            }
+            .site-header-topbar__search{
+                svg{
+                    @apply w-5 h-5 block;
+                }
+            }
+        }
+    }
+    &-navbar{
+        @apply py-[1.25vw] flex items-center bg-white;
+        &__container{
+            .site-header-navbar__main{
+                > ul{
+                    @apply flex items-center;
+                    > li{
+                        a{
+                            @apply text-size-base;
+                        }
+                        &:not(:last-child){
+                            @apply mr-8;
+                        }
+                    }
+                }
+            }
+        }
+        &__title{
+            @apply font-bold text-size-base;
+        }
+        &-submenu{
+            > li{
+                @apply mr-0;
+                > a{
+                    @apply inline-block w-full py-2 text-size-sm;
+                }
+            }
+            &-0{
+                padding-left: var(--grid-offset);
+                padding-right: calc(var(--grid-gutter) * 2);
+                @apply absolute left-0 w-full bg-white columns-3 pt-10 pb-6 gap-x-5 opacity-0 invisible pointer-events-none;
+                @at-root .site-header-navbar__main ul li.is-hovered .site-header-navbar-submenu-0{
+                    @apply opacity-100 visible pointer-events-auto;
+                }
+                @at-root .site-header.is-hidden .site-header-navbar__main .site-header-navbar-submenu-0{
+                    @apply hidden;
+                }
+                > li {
+                    @apply inline-block w-full;
+                    > a{
+                        @apply font-bold border-t-2 border-grey-400;
+                    }
+                }
+            }
+            &:not(.site-header-navbar-submenu-0){
+                @apply grid grid-cols-4 gap-x-5;
+                > li{
+                    grid-column: 2 / 5;
+                    @apply border-t border-grey-400;
+                    > a{
+                    }
+                }
+            }
+        }
+    }
+}
+
+#overlay{
+    @apply fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 z-10 opacity-0 invisible pointer-events-none;
+    &.is-active{
+        @apply opacity-100 visible;
+    }
 }

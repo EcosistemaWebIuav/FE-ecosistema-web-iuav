@@ -1,0 +1,352 @@
+{% set paths_base = '../..' %}
+{% set bodyClasses = 'single single-course' %}
+
+{% extends "base.twig" %}
+
+{% block breadcrumbs %}
+
+    {% set breadcrumbs_block = 
+        {
+            "post_type": "courses",
+            "current_id": currentPost 
+        }
+    %}
+    {% include '../blocks/breadcrumbs.twig' with {'block': breadcrumbs_block } %}
+
+{% endblock %}
+
+{% block banner %}
+
+    {% set banner_block = 
+        {
+            "key": "page-title-banner",
+            "content": {
+                "image": post_type.courses.items[currentPost].image,
+                "title": post_type.courses.items[currentPost].banner_title
+            }
+        } 
+    %}
+    {% include '../blocks/page-title-banner.twig' with {'block': banner_block } %}
+
+{% endblock %}
+ 
+{% block content %}
+
+    <span class="secondary-nav-trigger"></span>
+    <nav class="secondary-nav">
+        <ul>
+            {% for item in post_type.courses.nav %}
+                <li><a href="{{item.url}}">{{item.name}}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="#" class="secondary-nav__btn"><span>Come iscriversi</span></a>
+    </nav>
+
+    <section class="course-cols content-section" id="presentazione">
+        <div class="course-cols__col-1">
+            {% set course_grid_list_block = 
+                {
+                    "key": "grid-list",
+                    "content": {
+                        "items": [
+                            {
+                                "label": "Classe",
+                                "text": post_type.courses.items[currentPost].course_class
+                            },
+                            {
+                                "label": "Posti disponibili",
+                                "text": post_type.courses.items[currentPost].course_seats
+                            },
+                            {
+                                "label": "Crediti",
+                                "text": post_type.courses.items[currentPost].course_cfu
+                            },
+                            {
+                                "label": "Durata",
+                                "text": post_type.courses.items[currentPost].course_duration
+                            },
+                            {
+                                "label": "Coordinamento",
+                                "text": post_type.courses.items[currentPost].course_coordination
+                            },
+                            {
+                                "label": "Titolo ottenuto",
+                                "text": post_type.courses.items[currentPost].course_title
+                            },
+                            {
+                                "label": "Lingua",
+                                "text": post_type.courses.items[currentPost].course_language
+                            },
+                            {
+                                "label": "Sede",
+                                "text": post_type.courses.items[currentPost].course_location
+                            },
+                            {
+                                "label": "Dipartimento",
+                                "text": post_type.courses.items[currentPost].course_department
+                            },
+                            {
+                                "label": "Requisiti di accesso",
+                                "text": post_type.courses.items[currentPost].course_requirements
+                            }
+                        ]
+                    }
+                } 
+            %}
+            {% include '../blocks/grid-list.twig' with {'block': course_grid_list_block } %}
+
+            <div>
+                {% set course_grid_list_block = 
+                    {
+                        "key": "grid-list",
+                        "content": {
+                            "items": [
+                            ]
+                        }
+                    } 
+                %}
+                {% for link in post_type.courses.items[currentPost].course_links %}
+                    {% set block_link = 
+                        {
+                            "key": "link",
+                            "url": link.url,
+                            "content": {
+                                "name": link.name,
+                                "type": link.type,
+                                "external_name": link.external_name
+                            }
+                        }
+                    %}
+                    {% include '../blocks/link.twig' with {'block': block_link } %}
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="course-cols__col-2">
+            {{post_type.courses.items[currentPost].content}}
+            {% include "./partials/picture.twig" with {"image": post_type.courses.items[currentPost].content_image } %}
+        </div>
+    </section>
+
+    {# Piano di studi #}
+    <section class="content-section" id="piano-di-studi">
+
+        {# Titolo #}
+        {% set studyplan_block_title = 
+            {
+                "key": "title",
+                "tag": "h2",
+                "classes": "block-title--sm block-title--divider",
+                "content": {
+                    "title": "Piano di studi"
+                }
+            }
+        %}
+        {% include '../blocks/title.twig' with {'block': studyplan_block_title } %}
+
+        {# Accordion #}
+        {% set studyplan_block_accordion = 
+            {
+                "key": "accordion",
+                "classes": "",
+                "content": {
+                    "items": [
+                        {
+                            "title": "Primo anno",
+                            "inner_blocks": [
+                                {
+                                    "key": "links-list-columns",
+                                    "content": {
+                                        "list": post_type.courses.items[currentPost].course_study_plan[0]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Secondo anno",
+                            "inner_blocks": [
+                                {
+                                    "key": "links-list-columns",
+                                    "content": {
+                                        "list": post_type.courses.items[currentPost].course_study_plan[0]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Terzo anno",
+                            "inner_blocks": [
+                                {
+                                    "key": "links-list-columns",
+                                    "content": {
+                                        "list": post_type.courses.items[currentPost].course_study_plan[0]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Attività non inserite in uno specifico anno di corso",
+                            "inner_blocks": [
+                                {
+                                    "key": "links-list-columns",
+                                    "content": {
+                                        "list": post_type.courses.items[currentPost].course_study_plan[0]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        %}
+        {% include '../blocks/accordion.twig' with {'block': studyplan_block_accordion } %}
+
+    </section>
+
+    {# Selezioni, immatricolazioni e ammissioni #}
+    <section class="content-section" id="immatricolazioni">
+
+        {# Titolo #}
+        {% set enrollment_block_title = 
+            {
+                "key": "title",
+                "tag": "h2",
+                "classes": "block-title--sm block-title--divider",
+                "content": {
+                    "title": "Selezioni, immatricolazioni e ammissioni"
+                }
+            }
+        %}
+        {% include '../blocks/title.twig' with {'block': enrollment_block_title } %}
+
+        {# Testo #}
+        {% set enrollment_block_content = 
+            {
+                "key": "paragraph",
+                "classes": "block-paragraph--1col",
+                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+            }
+        %}
+        {% include '../blocks/paragraph.twig' with {'block': enrollment_block_content } %}
+
+        {# Download #}
+        {% set enrollment_block_files = 
+            {
+                "key": "files-list",
+                "classes": "",
+                "content": {
+                    "items": post_type.courses.items[currentPost].course_enrollment.files
+                }
+            }
+        %}
+        {% include '../blocks/files-list.twig' with {'block': enrollment_block_files } %}
+
+    </section>
+
+    {# Tasse e contributi #}
+    <section class="content-section" id="tasse-contributi">
+
+        {# Titolo #}
+        {% set taxes_block_title = 
+            {
+                "key": "title",
+                "tag": "h2",
+                "classes": "block-title--sm block-title--divider",
+                "content": {
+                    "title": "Tasse e contributi"
+                }
+            }
+        %}
+        {% include '../blocks/title.twig' with {'block': taxes_block_title } %}
+
+        {# Testo #}
+        {% set taxes_block_content = 
+            {
+                "key": "paragraph",
+                "classes": "block-paragraph--1col",
+                "content": "<p><strong>Prova titolo</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+            }
+        %}
+        {% include '../blocks/paragraph.twig' with {'block': taxes_block_content } %}
+
+        {# Griglia informativa #}
+        {% set taxes_block_list = 
+            {
+                "key": "grid-list",
+                "classes": "",
+                "content": {
+                    "items": post_type.courses.items[currentPost].course_taxes.items
+                }
+            }
+        %}
+        {% include '../blocks/grid-list.twig' with {'block': taxes_block_list } %}
+
+    </section>
+
+    <section id="open-day">
+        {% include '../blocks/featured-content-stacked.twig' with {'block': post_type.courses.items[currentPost].course_focus } %}
+    </section>
+
+    {# Ultime news #}
+    <section class="content-section" id="news">
+        {# Titolo #}
+        {% set news_block_title = 
+            {
+                "key": "title",
+                "tag": "h2",
+                "classes": "block-title--sm block-title--divider",
+                "content": {
+                    "title": "Ultime news"
+                }
+            }
+        %}
+        {% include '../blocks/title.twig' with {'block': news_block_title } %}
+
+        {# News posts #}
+        {% include '../blocks/tease-row.twig' with {'block': post_type.courses.items[currentPost].course_news } %}
+
+    </section>
+
+    {# Avvisi #}
+    <section class="content-section" id="avvisi">
+        {# Titolo #}
+        {% set notices_block_title = 
+            {
+                "key": "title",
+                "tag": "h2",
+                "classes": "block-title--sm block-title--divider",
+                "content": {
+                    "title": "Avvisi"
+                }
+            }
+        %}
+        {% include '../blocks/title.twig' with {'block': notices_block_title } %}
+
+        {# News posts #}
+        {% include '../blocks/tease-row.twig' with {'block': post_type.courses.items[currentPost].course_notices } %}
+
+    </section>
+
+    {# Domande frequenti #}
+    <section class="content-section" id="faq">
+        {# Titolo #}
+        {% set faq_block_title = 
+            {
+                "key": "title",
+                "tag": "h2",
+                "classes": "block-title--sm block-title--divider",
+                "content": {
+                    "title": "Domande frequenti"
+                }
+            }
+        %}
+        {% include '../blocks/title.twig' with {'block': faq_block_title } %}
+
+        {% include '../blocks/accordion.twig' with {'block': post_type.courses.items[currentPost].course_faq } %}
+
+    </section>
+
+    {# Contatti #}
+    {% include '../blocks/contacts-section.twig' with {'block': post_type.courses.items[currentPost].course_contacts, 'id': 'contatti' } %}
+
+{% endblock %}

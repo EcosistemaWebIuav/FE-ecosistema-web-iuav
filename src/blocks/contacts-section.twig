@@ -1,0 +1,47 @@
+
+{% if id == null %}
+{% set id = block.id %}
+{% endif %}
+
+<section class="contacts-section" id="{{id}}">
+    {% include '../blocks/title.twig' with {'block': block.title } %}
+    {% for row in block.content %}
+        <div class="contacts-section-cards-row">
+            <p>{{row.title}}</p>
+            <div class="contacts-section-cards-row__inner">
+                {% for card in row.items %}
+                    <div class="contacts-section-card{% if card.text %} contacts-section-card--span{% endif %}">
+                        <div>
+                            <header>
+                                <p>{{card.title}}</p>
+                                {% if card.subtitle %}
+                                    <p>{{card.subtitle}}</p>
+                                {% endif %}
+                            </header>
+                            <footer>
+                                <ul>
+                                    {% if card.email %}
+                                        <li><a href="mailto:{{card.email}}">{{card.email}}</a></li>
+                                    {% endif %}
+                                    {% if card.phone %}
+                                        <li><a href="tel:{{card.phone}}">{{card.phone}}</a></li>
+                                    {% endif %}
+                                    {% if card.links %}
+                                        {% for link in card.links %}
+                                            <li><a href="{{link.url}}">{{link.name}}</a></li>
+                                        {% endfor %}
+                                    {% endif %}
+                                </ul>
+                            </footer>
+                        </div>
+                        {% if card.text %}
+                            <div>
+                                <p>{{card.text}}</p>
+                            </div>
+                        {% endif %}                        
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</section>

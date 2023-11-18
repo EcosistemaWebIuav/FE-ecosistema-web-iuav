@@ -1,0 +1,12 @@
+{% if title == null %}
+    {% set title = block.content.title %}
+{% endif %}
+
+<div class="block-container block-{{block.key}} {{block.classes}}">
+    <div class="block-{{block.key}}__inner">
+        <{{block.tag}}>{{title}}</{{block.tag}}>
+        {# {% if block.content.link != null %}
+            <a href="{{block.content.link.url}}">{{block.content.link.label}}</a>
+        {% endif %} #}
+    </div>
+</div>

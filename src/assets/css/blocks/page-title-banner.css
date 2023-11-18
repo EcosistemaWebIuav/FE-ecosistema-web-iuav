@@ -1,0 +1,12 @@
+.block-page-title-banner{
+    &__img{
+        height: var(--page-title-banner-img-height);
+        @apply relative grid-container overflow-hidden mb-10 z-20;
+        img{
+            @apply w-full h-full object-cover;
+        }
+    }
+    .block-title{
+        @apply sticky bottom-[calc(var(--grid-gutter)*2)] z-10 mb-0;
+    }
+}

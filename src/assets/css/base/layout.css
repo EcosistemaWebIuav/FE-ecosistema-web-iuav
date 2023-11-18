@@ -1,6 +1,14 @@
+/**
+* Graphical global CSS rules
+*/
+
 html{
 }
 
 body{
-    @apply bg-grey-100;
+    @apply bg-white;
+}
+
+.content{
+    @apply h-full;
 }

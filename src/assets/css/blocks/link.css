@@ -1,0 +1,44 @@
+.block-link{
+    /* @apply grid grid-cols-2 items-center; */
+    @apply flex;
+    @apply w-full text-size-lg border-t border-grey-200 relative leading-none;
+    &::before{
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m34.711 24-6.778-7.32 1.467-1.36L38.363 25 29.4 34.68l-1.467-1.36L34.71 26H12v-2h22.711Z' fill='%23000'/%3E%3C/svg%3E");
+        background-size: 100%;
+        @apply absolute top-0 left-0 w-[3.5vw] aspect-square bg-no-repeat bg-center mr-[1vw] -translate-y-[0.33vw];
+    }
+    > span{
+        @apply flex items-center pl-[calc(3.5vw+1rem)] py-[0.25vw] pr-[1vw];
+    }
+    &:hover{
+        @apply bg-black text-white;
+        &::before{
+            background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m34.711 24-6.778-7.32 1.467-1.36L38.363 25 29.4 34.68l-1.467-1.36L34.71 26H12v-2h22.711Z' fill='%23fff'/%3E%3C/svg%3E");
+        }
+    }
+    &[href]:not(:where(
+        /* exclude hash only links */
+        [href^="#"],
+        /* exclude relative but not double slash only links */
+        [href^="/"]:not([href^="//"]),
+        /* domains to exclude */
+        /* [href*="//stackoverflow.com"], */
+        /* subdomains to exclude */
+        /* [href*="//meta.stackoverflow.com"] */
+    )){
+        &::before{
+            background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M31.0124 17.0725L21.043 16.6891L21.1198 14.6906L34.3016 15.1975L34.8086 28.3793L32.81 28.4562L32.4266 18.4867L16.3673 34.546L14.9531 33.1318L31.0124 17.0725Z' fill='black'/%3E%3C/svg%3E%0A");
+        }
+        span{
+            span{                
+                @apply text-size-sm text-grey-300 self-start ml-[1vw] translate-y-[0.5vw];
+            }
+        }
+        &:hover{
+            &::before{
+                background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M31.0124 17.0725L21.043 16.6891L21.1198 14.6906L34.3016 15.1975L34.8086 28.3793L32.81 28.4562L32.4266 18.4867L16.3673 34.546L14.9531 33.1318L31.0124 17.0725Z' fill='white'/%3E%3C/svg%3E%0A");
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<div class="block-{{block.key}}">
+    <div class="block-{{block.key}}__content">
+        <div class="row">
+            <div class="columns">
+                <div class="w-full lg:w-3/4 column">
+                    <h1>{{block.content.title}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-{{block.key}}__images">
+        {% for image in block.content.images %}
+            <div class="block-{{block.key}}-img" data-{{block.key}}-image="{{image.filename}}" data-{{block.key}}-image-parallax-speed="{{image.speed}}">
+                {% include "../layout/partials/picture.twig" with {"image": image } %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

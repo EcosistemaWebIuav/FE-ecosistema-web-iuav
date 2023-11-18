@@ -1,0 +1,27 @@
+.block-grid-list{
+    container-type: inline-size;
+    &__inner{
+        @apply grid gap-x-5 gap-y-8;
+        > div{
+            @apply border-t border-grey-200 pt-2;
+            p{
+                @apply text-size-base mb-0;
+                &:first-child{
+                    @apply text-grey-300;
+                }
+            }
+        }
+    }
+}
+
+@container (min-width: 480px){
+    .block-grid-list__inner{
+        @apply grid-cols-2;
+    }
+}
+
+@container (min-width: 960px){
+    .block-grid-list__inner{
+        @apply grid-cols-4;
+    }
+}

@@ -1,0 +1,30 @@
+.block-images-grid{
+    &--black{
+        @apply bg-black py-12;
+    }
+    &__wrapper{
+        @apply grid grid-cols-12 grid-rows-2 gap-5;
+        > div{
+            @apply relative;
+            &:first-child{
+                grid-area: 1 / 1 / 4 / 7;
+                @apply aspect-[4/5];
+            }
+            &:nth-child(2){
+                grid-area: 1 / 7 / 2 / 10;
+            }
+            &:nth-child(3){
+                grid-area: 1 / 10 / 2 / 13;
+            }
+            &:nth-child(4){
+                grid-area: 2 / 7 / 4 / 10;
+            }
+            &:nth-child(5){
+                grid-area: 2 / 10 / 4 / 13;
+            }
+            img{
+                @apply absolute top-0 left-0 w-full h-full object-cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{% extends "./base.twig" %}
+
+{% block content %}
+
+
+    <div class="post-archive-header grid-container">
+        <div>
+            <nav>
+                <ul>
+                    {% set queried_post_types = [
+                        "news", "notices", "eventi", "attivita"
+                    ] %}
+                    {% for queried_post in queried_post_types %}
+                        {% set posts_count = post_type[~queried_post~].items|length %}
+                        <li class=" {% if post_type[~queried_post~].name|lower == type %}is-active{% endif %}"><a href="{{post_type[~queried_post~].url}}">{{post_type[~queried_post~].name}}<span>{{posts_count}}</span></a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <div class="post-archive-header__description">{{post_type[~type~].description}}</div>
+    </div>
+
+    {% block archive %}{% endblock %}
+
+
+{% endblock %}

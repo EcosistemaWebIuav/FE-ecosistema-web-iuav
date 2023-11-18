@@ -1,0 +1,10 @@
+.block-paragraph{
+    &--sm{
+        p{
+            @apply text-size-sm;
+        }
+    }
+    &--1col{
+        @apply lg:w-1/2;
+    }
+}

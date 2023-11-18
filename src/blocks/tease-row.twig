@@ -1,0 +1,26 @@
+<div class="block-{{block.key}} {{block.classes}} grid-container">
+    <div class="tease-wrapper">
+        {% for group in block.content.featured %}
+            {% set type = group.post_type %}
+            {% for item in group.items %}
+                {% set post = post_type[~type~].items[~item~] %}
+                <a href="#" class="tease">
+                    <div class="tease__img">
+                    {% if post.featured_image %}
+                        {% include "../layout/partials/picture.twig" with {"image": post.featured_image } %}
+                    {% endif %}
+                    </div>
+                    
+                    <div class="tease__main">
+                        <div class="tease-main-header">
+                            {% set post_term = post.terms[0] %}
+                            <span>{{taxonomies[~type~].terms[~post_term~].name}}</span>
+                            <span>{{post.date|date('d.m.Y')}}</span>
+                        </div>
+                        <p class="tease-main-title">{{post.title}}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{% set type = block.content.featured.post_type %}
+{% set id = block.content.featured.id %}
+{% set post = post_type[~type~].items[~id~] %}
+
+<div class="block-{{block.key}} {{block.classes}}">
+    <div class="block-{{block.key}}__content">
+        <p>{{post.title}}</p>
+        <a href="#">Leggi di più</a>
+    </div>
+    <div class="block-{{block.key}}__img">
+        {% include "../layout/partials/picture.twig" with {"image": post.featured_image } %}
+    </div>
+</div>

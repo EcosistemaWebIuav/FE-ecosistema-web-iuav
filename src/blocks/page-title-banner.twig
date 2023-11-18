@@ -1,0 +1,32 @@
+{% set id = random(99999) %}
+<div class="block-{{block.key}}" id="block-{{id}}">
+
+    <div class="block-{{block.key}}__img">
+        {% include "../layout/partials/picture.twig" with {"image": block.content.image } %}
+    </div>
+
+    {% set block_title = {"key": "title", "tag": "h1", "classes": "block-title--lg" } %}
+    {% include "./title.twig" with {"block": block_title, "title": block.content.title } %}
+
+</div>
+
+<script>
+    window.addEventListener('load', (event) => {
+        //define DOM element
+        const block = document.getElementById(`block-{{id}}`)
+        
+        function setBannerHeight(){
+            //get element top offset
+            const blockOffsetTop = block.offsetTop
+            //get window height
+            const windowHeight = window.innerHeight
+            const bannerOffsetPx = window.innerWidth/100*1.5;
+            //set block height
+            block.style.setProperty('--page-title-banner-img-height', `${windowHeight-blockOffsetTop-bannerOffsetPx}px`)
+        }
+        
+        setBannerHeight()
+
+        window.addEventListener('resize', setBannerHeight)
+    })
+</script>

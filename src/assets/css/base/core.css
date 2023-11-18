@@ -1,7 +1,15 @@
+/**
+* Non-graphical global CSS rules
+*/
+
 html{
-    @apply scroll-smooth;
+    @apply scroll-smooth min-h-screen;
 }
 
-.content-wrapper{
+.content{
     /* @apply overflow-hidden; */
+}
+
+/** Mockup **/
+body{
 }

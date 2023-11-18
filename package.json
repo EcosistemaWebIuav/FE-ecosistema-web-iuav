@@ -1,8 +1,10 @@
 {
-  "name": "fe-ecosistema-web-iuav",
+  "name": "frontend-boilerplate",
   "description": "Frontend boilerplate",
-  "version": "0.1.0",
-  "author": "Iuav",
+  "version": "1.0.0",
+  "author": {
+    "name": "Frontend"
+  },
   "main": "gulpfile.js",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
@@ -41,6 +43,7 @@
     "tailwindcss-export-config": "^2.0.2"
   },
   "scripts": {
+    "export-tailwind-config": "tailwindcss-export-config --config=tailwind.config.js --destination=static/src/assets/scss/config/_vars --format=scss --flat=true"
   },
   "dependencies": {
   }

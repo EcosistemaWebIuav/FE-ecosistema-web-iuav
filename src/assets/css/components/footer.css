@@ -1,3 +1,29 @@
 .site-footer{
-    
+    @apply pt-[4.25vw] pb-[2.15vw] text-size-base;
+    &__title{
+        p{
+            @apply pt-[1.5vw] font-bold mb-[2vw] border-t border-black;
+        }
+    }
+    &__main{
+        @apply grid grid-cols-4;
+        > div{
+            > span{
+                @apply font-bold;
+            }
+        }
+    }
+    &__colophon{
+        nav{
+            @apply pt-[1.75vw] border-t border-black mt-[3.5vw];
+            ul{
+                @apply flex;
+                li{
+                    &:not(:last-child){
+                        @apply mr-[2vw];
+                    }
+                }
+            }
+        }
+    }
 }

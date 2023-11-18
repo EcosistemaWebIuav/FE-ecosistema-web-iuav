@@ -1,11 +1,10 @@
-{% extends "./base.twig" %}
+{% set paths_base = '..' %}
+{% set bodyClasses = 'page' %}
 
-{% block content_wrapper %}
+{% extends "base.twig" %}
 
-    {% block banner %}
-        {% include "../components/banner.twig" with {'content': page.banner.content, 'type': bannerType, 'size': bannerSize, 'video': page.banner.video, 'buttons': page.banner.buttons} %}
-    {% endblock %}
-
-    {% block content %}{% endblock %} 
-
-{% endblock %}
+{% block content %}
+    {% for block in post_type.pages[currentPage].blocks %}
+        {% include '../blocks/'~block.key~'.twig' with {'block': block } %}
+    {% endfor %}
+{% endblock %} 

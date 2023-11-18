@@ -1,0 +1,32 @@
+.post-archive-header{
+    @apply grid grid-cols-2 gap-x-5 mt-32 mb-16;
+    nav{
+        ul{
+            @apply flex;
+            li{
+                a{
+                    @apply text-size-lg text-grey-300;
+                    span{
+                        @apply inline-block ml-2.5 mr-1 text-size-sm align-top;
+                    }
+                }
+                &.is-active{
+                    a{
+                        @apply text-black;
+                    }
+                }
+                &:not(:last-child){
+                    @apply mr-4;
+                    &::after{
+                        content: ',';
+                        @apply text-black text-size-lg;
+                    }
+                }
+            }
+        }
+    }
+    &__description{
+        margin-top: 0.5vw;
+        @apply text-size-md;
+    }
+}

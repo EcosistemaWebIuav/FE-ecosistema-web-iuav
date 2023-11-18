@@ -1,0 +1,11 @@
+<div class="block-{{block.key}} {{block.classes}}">
+    <div class="grid-container">
+        <div class="block-{{block.key}}__wrapper">
+            {% for image in block.content.images %}
+                <div>
+                    {% include "../layout/partials/picture.twig" with {"image": image } %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

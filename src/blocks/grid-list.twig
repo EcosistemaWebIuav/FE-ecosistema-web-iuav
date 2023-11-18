@@ -1,0 +1,10 @@
+<div class="block-container block-{{block.key}} {{block.classes}}">
+    <div class="block-{{block.key}}__inner">
+        {% for item in block.content.items %}
+            <div>
+                <p>{{item.label}}</p>
+                <p>{{item.text}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

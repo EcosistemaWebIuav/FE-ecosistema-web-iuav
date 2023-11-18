@@ -1,1 +1,54 @@
-<footer class="site-footer"></footer>
+<footer class="site-footer">
+    <div class="grid-container site-footer__title">
+        <p>{{site.title}}</p>
+    </div>
+    <div class="grid-container site-footer__main">
+        <div>
+            <span>Contatti</span>
+            <p>
+                {{site.global.address}}<br>
+                C.F. {{site.global.law.cf}}<br>
+                P.IVA {{site.global.law.vat}}
+            </p>
+        </div>
+        <div class="site-footer__nav">
+            <span>{{blocks.footer.nav[0].name}}</span>
+            <nav>
+                <ul>
+                    {% for item in blocks.footer.nav[0].children %}
+                        <li><a href="{{item.url}}">{{item.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <div class="site-footer__nav">
+            <span>{{blocks.footer.nav[1].name}}</span>
+            <nav>
+                <ul>
+                    {% for item in blocks.footer.nav[1].children %}
+                        <li><a href="{{item.url}}">{{item.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <div class="site-footer__social-links">
+            <span>Seguici su</span>
+            <nav>
+                <ul>
+                    {% for item in blocks.footer.social_links %}
+                        <li><a href="{{item.url}}">{{item.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="grid-container site-footer__colophon">
+        <nav>
+            <ul>
+                {% for item in blocks.footer.colophon.nav %}
+                    <li><a href="{{item.url}}">{{item.name}}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</footer>

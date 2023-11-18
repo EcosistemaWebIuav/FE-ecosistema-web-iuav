@@ -1,0 +1,12 @@
+{% if items %}
+    <ul class="site-header-navbar-submenu site-header-navbar-submenu-{{nesting}}">
+        {% for sub_item in items %}
+            <li>
+                <a href="{{sub_item.url}}">{{sub_item.name}}</a>
+                {% if sub_item.children %}
+                    {% include "./menu.twig" with {"items": sub_item.children, "nesting": nesting+1 } %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

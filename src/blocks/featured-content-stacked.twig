@@ -1,0 +1,15 @@
+{# 
+ # Blocco contenuto in evidenza senza immagine cover 
+ #}
+
+<div class="block-{{block.key}} {{block.classes}}">
+    <div class="block-container block-{{block.key}}__inner">
+        {% include '../blocks/title.twig' with {'block': block.content.title } %}
+        <div class="block-{{block.key}}__img">
+            {% include "../layout/partials/picture.twig" with {"image": block.content.image } %}
+        </div>
+        {% if block.content.text %}
+            {% include '../blocks/paragraph.twig' with {'block': block.content.text } %}
+        {% endif %}
+    </div>
+</div>

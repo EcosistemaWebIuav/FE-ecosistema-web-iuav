@@ -1,0 +1,23 @@
+{% if block.post_type == 'pages' %}
+    {% set current_post = post_type.pages[currentPage] %}
+{% else %}
+    {% set current_post = post_type[block.post_type].items[currentPost] %}
+{% endif %}
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs">
+    <ul>
+        {% if current_post.terms %}
+            {% for current_post_term_id in current_post.terms %}
+                {% set term = taxonomies[block.post_type].terms[current_post_term_id] %}
+                <li><a href="{{term.url}}">{{term.name}}</a></li>                
+            {% endfor %}
+        {% endif %}
+        {% if block.parents|length > 0 %}
+            {% for parent_page_id in block.parents %}
+                {% set parent_page = post_type.pages[parent_page_id] %}
+                <li><a href="{{parent_page.url}}">{{parent_page.title}}</a></li>                
+            {% endfor %}
+        {% endif %}
+        <li><span aria-current="page">{{current_post.title}}</span></li>
+    </ul>
+</nav>

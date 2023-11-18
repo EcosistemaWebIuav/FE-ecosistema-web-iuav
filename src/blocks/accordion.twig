@@ -1,0 +1,20 @@
+{# 
+ # Blocco accordion 
+ #}
+ 
+<div class="block-container block-{{block.key}} {{block.classes}}">
+    {% for item in block.content.items %}
+        <div class="block-{{block.key}}__inner" data-accordion>
+            <span data-accordion-title>{{item.title}}</span>
+            <div data-accordion-content style="display:none">
+                {% if item.content.text %}
+                   <p>{{item.content.text}}</p>
+                {% else %}
+                    {% for inner_block in item.inner_blocks %}
+                        {% include './'~inner_block.key~'.twig' with {'block': inner_block } %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>    
+    {% endfor %}
+</div>

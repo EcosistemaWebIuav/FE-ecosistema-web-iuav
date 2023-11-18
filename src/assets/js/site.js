@@ -1,390 +1,282 @@
 window.addEventListener('load', (event) => {
 
     const body = document.body
-    const overlay = document.getElementById('overlay')
-    var pristine
 
-    /**
-     * Set custom message for input email validation
-     */
-    Pristine.addMessages('en', {
-        'email': "Questo campo richiede un'email valida"
-    })    
+    // If less than most tablets, set CSS var to window height.
+    let vh = '100vh'
 
-    const form = document.getElementById('request-form');
-
-    /**
-     * Check if iOS and set --vh var
-     */
-    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
+    // Check if iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
     if (isIOS && window.matchMedia("(max-width: 1024px)").matches) {
-        document.documentElement.classList.add('is-ios')
+        $('html').addClass('is-ios')
         set100vhVar()
     }
     
     function set100vhVar() {
-        // If less than most tablets, set CSS var to window height.
-        let value = '100vh'
-
         // If window size is iPad or smaller, then use JS to set screen height.
         if (window.innerWidth && window.innerWidth <= 1024) {
-            value = `${window.innerHeight}px`
+            vh = `${window.innerHeight}px`
         }
-        document.documentElement.style.setProperty("--vh", value)
+        document.documentElement.style.setProperty("--vh", vh)
     }
 
-    /**
-     * Select correct radio button when clicked on card
-     */
+    const wh = window.innerHeight
+    const header = document.querySelector('.site-header')
+    const logo = document.querySelector('.site-logo')
+    const secondaryNav = document.querySelector('.secondary-nav')
+    const secondaryNavTrigger = document.querySelector('.secondary-nav-trigger')
 
-    const certificateTypeNameInput = document.getElementById('certificate-type-name')
-
-    const reqTypes = document.querySelectorAll('[data-form-request-type]')
-    reqTypes.forEach(item => {
-        item.addEventListener('click', function(){
-            const radio = this.querySelector('input[type="radio"]')
-            const radioValue = radio.id
-            certificateTypeNameInput.value = radioValue
-            radio.checked = true
-        })
-    })
+    let prevScrollPos = 0
 
     /**
-     * Navigate through form steps
+     * Get header height
      */
-    const formNavigationButtons = document.querySelectorAll('[data-form-step-show]')
-    formNavigationButtons.forEach(button => {
-        button.addEventListener('click', function(){
-            const step = this.getAttribute('data-form-step-show')
-            this.parentElement.parentElement.style.display = 'none'
-            document.querySelector(`[data-form-step="${step}"]`).style.display = 'block'
-        })
-    })
-
-    /**
-     * Show correct summary and file upload fields on form step 2
-     */
-    const reqSelected = document.querySelector('[data-form-request-selected]')
-
-    if (typeof(reqSelected) != 'undefined' && reqSelected != null){
-
-        reqSelected.addEventListener('click', function(){
-    
-            const selection = document.querySelector('[name="certificate-type"]:checked').id
-            /* Show right summary */
-            const reqs = document.querySelectorAll('.form-card-step-summary__card')
-            reqs.forEach(req => {
-                if (req.id == `summary-${selection}`) {
-                    req.style.display = 'block'
-                } else {
-                    req.style.display = 'none'
-                }
-            })
-    
-            /* Show right fields */
-            const reqFields = document.querySelectorAll('.form-card-step-files')
-            reqFields.forEach(item => {
-                if (item.id == `file-upload-${selection}`) {
-                    item.style.display = 'block'
-                    const itemInputs = item.querySelectorAll('input[type="file"]')
-                    itemInputs.forEach(itemInput => {
-                        itemInput.required = true
-                    })
-                } else {
-                    item.style.display = 'none'
-                    const itemInputs = item.querySelectorAll('input[type="file"]')
-                    itemInputs.forEach(itemInput => {
-                        itemInput.required = false
-                        // reset input file
-                        itemInput.value = ''
-                        itemInput.closest('.drop-area').classList.remove('has-file')
-                    })
-                }
-            })
-    
-            pristine = new Pristine(form, {
-                classTo: 'form-input-row',
-                errorClass: 'has-error',
-                successClass: 'has-success',
-                // class of the parent element where error text element is appended
-                errorTextParent: 'form-input-row',
-                // type of element to create for the error text
-                errorTextTag: 'span',
-                // class of the error text element
-                errorTextClass: 'text-help'
-            })
-    
-        })
+    function getHeaderHeight(){
+        document.documentElement.style.setProperty("--header-height", `${header.clientHeight}px`)
     }
 
-    /**
-     * Reset & Destroy Pristine when going back to step 1 of the form
-     */
-    const showFormStep1 = document.querySelector('[data-form-step-show="1"]')
-    if (typeof(showFormStep1) != 'undefined' && showFormStep1 != null){
-        showFormStep1.addEventListener('click', function(){
-            pristine.reset()
-            pristine.destroy()
-        })
-    }
+    getHeaderHeight()
 
     /**
-     * File upload
+     * Get secondary nav height
      */
-
-    //handle normal inputs
-    const inputFiles = document.querySelectorAll('input[type="file"]')
-    inputFiles.forEach(input => {
-        input.addEventListener('change', function(e){
-            
-            //select droparea
-            const dropArea = input.closest('.drop-area')
-
-            const fileBox = dropArea.querySelector('.file')
-
-            //set vars
-            const fileBoxName = fileBox.querySelector('.file__name')
-            const fileBoxSize = fileBox.querySelector('.file__size')
-            const fileName = input.files[0].name;
-            const fileSize = formatBytes(input.files[0].size)
-            const fileType = input.files[0].type
-    
-            const allowedType = checkFileType(fileType)
-            const allowedSize = checkFileSize(input.files[0].size)
-    
-            if (allowedType && allowedSize) {   
-
-                // set filename and file size    
-                fileBoxName.textContent = fileName
-                fileBoxSize.textContent = fileSize
-              
-                //set drop area with file
-                dropArea.classList.add('has-file')
-       
-                //clear error messages
-                dropArea.classList.remove('has-file-error')
-                
-            } else {
-
-                //clear input file
-                input.value = ''
-                
-                //add error class to droparea
-                dropArea.classList.add('has-file-error')
-
-                if (!allowedType && !allowedSize){
-                    dropArea.querySelector('.drop-area__error').textContent = `Il file ${fileName} non è consentito. Sono ammessi solo i file con queste estensioni: jpg, pdf. Sono ammessi solo file inferiori a 5MB.`
-                    return
-                }
-                if (!allowedType){
-                    dropArea.querySelector('.drop-area__error').textContent = `Il file ${fileName} non è consentito. Sono ammessi solo i file con queste estensioni: jpg, pdf.`
-                }
-                if (!allowedSize){
-                    dropArea.querySelector('.drop-area__error').textContent = `Il file ${fileName} non è consentito. Sono ammessi solo file inferiori a 5MB.`
-                }
-            }
-
-        }) 
-    })
-
-
-    function formatBytes(bytes, decimals = 2) {
-        if (!+bytes) return '0 Bytes'
-    
-        const k = 1024
-        const dm = decimals < 0 ? 0 : decimals
-        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-    
-        const i = Math.floor(Math.log(bytes) / Math.log(k))
-    
-        return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
+    function getSecondaryNavHeight(){
+        document.documentElement.style.setProperty("--secondary-nav-height", `${secondaryNav.clientHeight}px`)
     }
 
-    function checkFileType(fileType){
-        //allowed filetypes
-        const allowedExtensions = ["image/jpg", "image/jpeg", "application/pdf"]
+    if(secondaryNav !== null) getSecondaryNavHeight()
 
-        if (allowedExtensions.includes(fileType)) {
-            return true
+    /**
+     * Hide header if scrolling down, show if scrolling up
+     */
+    window.addEventListener('scroll', () => {
+
+        const currentScrollPos = window.scrollY
+
+        //if you start scrolling add class
+        if (currentScrollPos > 0) {
+            body.classList.add('is-scrolled')
+        } else{
+            body.classList.remove('is-scrolled')
         }
-        return false
-
-    }
-
-    function checkFileSize(fileSize){
-
-        const formattedFileSize = fileSize / 1024 / 1024
-
-        //under 5MB
-        if (formattedFileSize <= 5 ) {
-            return true
-        }
-
-        return false
-
-    }
-
-    const dropAreas = document.querySelectorAll('.drop-area')
-
-    function preventDefaults (e) {
-        e.preventDefault()
-        e.stopPropagation()
-    }
-
-    function highlight(e, dropArea) {
-        dropArea.classList.add('highlight')
-    }
-
-    function unhighlight(e, dropArea) {
-        dropArea.classList.remove('highlight')
-    }
-
-    function handleDrop(e, dropArea){
-        let dt = e.dataTransfer
-        let files = dt.files
         
-        //select DOM
-        const inputFile = dropArea.querySelector('input[type="file"]')
-        const fileBox = dropArea.querySelector('.file')
+        // if scrolling down, hide header and position logo to the left
+        // if scrolling up, show header and logo in initial position
+        if (prevScrollPos > 0 && prevScrollPos < currentScrollPos ) {
+            header.classList.add('is-hidden')
+            logo.classList.add('is-visible')
+            if(secondaryNav !== null) secondaryNav.classList.remove('is-stacked')
+            overlay.classList.remove('is-active')
+        } else if (prevScrollPos >= currentScrollPos) {
+            header.classList.remove('is-hidden')
+            logo.classList.remove('is-visible')
+            if(secondaryNav !== null) secondaryNav.classList.add('is-stacked')
+        }
+        
+        prevScrollPos = currentScrollPos
 
-        //set vars
-        const fileBoxName = fileBox.querySelector('.file__name')
-        const fileBoxSize = fileBox.querySelector('.file__size')
-        const fileName = files[0].name
-        const fileSize = formatBytes(files[0].size)
-        const fileType = files[0].type
-
-        const allowedType = checkFileType(fileType)
-        const allowedSize = checkFileSize(files[0].size)
-
-        if (allowedType && allowedSize) {   
-
-            // set filename and file size    
-            fileBoxName.textContent = fileName
-            fileBoxSize.textContent = fileSize
-          
-            //set drop area with file
-            dropArea.classList.add('has-file')
-
-            //set file to input file
-            inputFile.files = files
-
-            //clear error messages
-            dropArea.classList.remove('has-file-error')
-            
-        } else {
-            dropArea.classList.add('has-file-error')
-            if (!allowedType && !allowedSize){
-                dropArea.querySelector('.drop-area__error').textContent = `Il file ${fileName} non è consentito. Sono ammessi solo i file con queste estensioni: jpg, pdf. Sono ammessi solo file inferiori a 5MB.`
-                return
-            }
-            if (!allowedType){
-                dropArea.querySelector('.drop-area__error').textContent = `Il file ${fileName} non è consentito. Sono ammessi solo i file con queste estensioni: jpg, pdf.`
-            }
-            if (!allowedSize){
-                dropArea.querySelector('.drop-area__error').textContent = `Il file ${fileName} non è consentito. Sono ammessi solo file inferiori a 5MB.`
-            }
-        }        
-      
-    }
-
-    dropAreas.forEach(dropArea => {
-        ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            dropArea.addEventListener(eventName, preventDefaults, false)
-        })
-        ;['dragenter', 'dragover'].forEach(eventName => {
-            dropArea.addEventListener(eventName, function(e){
-                highlight(e, dropArea)
-            }, false)
-        })          
-        ;['dragleave', 'drop'].forEach(eventName => {
-            dropArea.addEventListener(eventName, function(e){
-                unhighlight(e, dropArea)
-            }, false)
-        })
-        dropArea.addEventListener('drop', function(e){
-            handleDrop(e, dropArea)
-        }, false)
     })
 
     /**
-     * Remove file
+     * Submenu
      */
-    const removeFileInputBtn = document.querySelectorAll('[data-file-remove]')
-    removeFileInputBtn.forEach(button => {
-        button.addEventListener('click', function(e){
-            const dropArea = button.closest('.drop-area')
-            const fileInput = dropArea.querySelector('input[type="file"]')
-            fileInput.value = ''
-            dropArea.classList.remove('has-file')
-        })  
-    })
-
-    /**
-     * Form validation
-     */
-    if (typeof(form) != 'undefined' && form != null){
-        form.addEventListener('submit', function (e) {
-            e.preventDefault()
+    const menuItems = document.querySelectorAll('.menu-item-has-children')
+    const overlay = document.getElementById('overlay'
+    )
+    menuItems.forEach(item => {
+        item.addEventListener('mouseenter', function(){
+            item.classList.add('is-hovered')
             overlay.classList.add('is-active')
-            var valid = pristine.validate(
-                document.querySelectorAll('.input-required')
-            )
-            if (valid) {
-                form.submit()
-            } else {
-                overlay.classList.remove('is-active')
-            }
         })
-    }
+        item.addEventListener('mouseleave', function(){
+            item.classList.remove('is-hovered')
+            overlay.classList.remove('is-active')
+        })
+    })
 
     /**
-     * Swiper
+     * Marquees 
      */
-    const carouselBar = document.querySelector('.carousel-bar span')
-    const carouselTime = 6000
+    const marquees = document.querySelectorAll('.block-marquee-posts-row')
+    let marqueesCardWidth
+    if (marquees.length > 0){
+        marqueesCardWidth = window.getComputedStyle(marquees[0]).getPropertyValue('--marquee-card-width')
+    }
 
-    const swiperText = new Swiper('.swiper-text', {
-        slidesPerView: 1,
-        allowTouchMove: false,
-        loop: true,
-        autoplay: {
-            delay: carouselTime
-        },
-        on: {
-            autoplayTimeLeft(s, time, progress) {
-                let width = carouselTime-time
-                width = width/1000*(100/(carouselTime/1000))
-                carouselBar.style.width = `${width}%`
-            }
-        }
-    })
+    marquees.forEach(marquee => {
 
-    const swiperVideo = new Swiper('.swiper-video', {
-        slidesPerView: 1,
-        allowTouchMove: false,
-        loop: true,
-        autoplay: {
-            delay: carouselTime
-        },
-        on: {
-            'init': function (swiper) {
-                const currentSlide = this.slides[swiper.activeIndex]
-                const currentVideos = currentSlide.querySelectorAll('video')
-                currentVideos.forEach(currentVideo => {
-                    currentVideo.play()
-                })        
-            }
-        }
-    })
+        const marqueeSpeed = Number(marquee.getAttribute('data-marquee-row-speed'))
+
+        let marqueePos = 0
+        let marqueeIntvl
     
-    swiperVideo.on('slideChange', function (swiper) {
-        const currentSlide = this.slides[swiper.activeIndex]
-        const currentVideos = currentSlide.querySelectorAll('video')
-        currentVideos.forEach(currentVideo => {
-            currentVideo.play()
+        //get vars
+        const items = marquee.getAttribute('data-marquee-row-items')
+        const wrapper = marquee.querySelector('.block-marquee-posts-row__wrapper')
+
+        //clone cards in marquee
+        const cards = wrapper.querySelectorAll('.card')
+        cards.forEach(card => {
+            wrapper.appendChild(card.cloneNode(true))
+        })
+
+        //calculate wrapper width
+        wrapper.style.width = `calc(${items*2}*${marqueesCardWidth})`
+
+        marqueeIntvl = setInterval(() => {
+            if (marqueePos > 50) {
+                wrapper.style.transform = `translateX(0%)`    
+                marqueePos = 0
+            } else {
+                wrapper.style.transform = `translateX(-${marqueePos}%)`
+            }
+            marqueePos = marqueePos+marqueeSpeed
+        }, 0)
+
+        marquee.addEventListener('mouseover', function(){
+            clearInterval(marqueeIntvl)
+        })
+
+        marquee.addEventListener('mouseleave', function(){
+            marqueeIntvl = setInterval(() => {
+                if (marqueePos > 50) {
+                    wrapper.style.transform = `translateX(0%)`    
+                    marqueePos = 0
+                } else {
+                    wrapper.style.transform = `translateX(-${marqueePos}%)`
+                }
+                marqueePos = marqueePos+marqueeSpeed
+            }, 0)    
+        })
+
+    })
+
+    /**
+     * Cards hover effect
+     */
+    const cards = document.querySelectorAll('.card')
+    cards.forEach(card => {
+        const marqueeWrapper = card.closest('.block-marquee-posts-row')
+        card.addEventListener('mouseenter', function(){
+            this.classList.add('is-hovered')
+            if (marqueeWrapper){
+                marqueeWrapper.classList.add('is-hovered')
+            }
+        })
+        card.addEventListener('mouseleave', function(){
+            this.classList.remove('is-hovered')
+            if (marqueeWrapper){
+                marqueeWrapper.classList.remove('is-hovered')
+            }
         })
     })
-      
+
+    /**
+     * Homepage Hero Banner parallax effect
+     */
+    const parallaxImages = document.querySelectorAll('[data-banner-scroll-image]')
+
+    document.addEventListener('scroll', function(){
+        const scrollPosition = window.scrollY
+        parallaxImages.forEach(image => {
+
+            const imageSpeed = image.getAttribute('data-banner-scroll-image-parallax-speed')
+            const imagePos = scrollPosition * imageSpeed
+            image.style.transform = `translateY(-${imagePos}px)`
+
+            scrollBannerObserver.observe(image)
+
+        })
+    })
+
+    
+    let scrollBannerObserver = new IntersectionObserver((entries) => { 
+        
+        entries.forEach(entry => {
+                       
+            if(entry.isIntersecting && (entry.target.getBoundingClientRect().top > 0)){
+                entry.target.classList.add('is-visible')
+                entry.target.style.opacity = entry.intersectionRatio
+            }
+
+        })
+
+    }, 
+    {
+        rootMargin: "0px 0px 0px 0px",
+        threshold: [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
+    })
+
+    /**
+     * Tease height transition
+     */
+    function updateTeaseHeight(tease){
+        const teaseHeight = tease.clientHeight
+        const teaseImg = tease.querySelector('.tease__img')
+        const teaseText = tease.querySelector('.tease__main')
+        const teaseTextHeight = teaseText.clientHeight
+        teaseImg.style.height = `${teaseHeight-teaseTextHeight}px`
+        teaseText.style.marginTop = `${teaseHeight-teaseTextHeight}px`
+    }
+
+    const teaseItems = document.querySelectorAll('.tease')
+    teaseItems.forEach(tease => {
+        updateTeaseHeight(tease)        
+    })
+
+    /**
+     * Accordion
+     */
+    const accordions = document.querySelectorAll('[data-accordion]')
+    accordions.forEach(accordion => {
+        const title = accordion.querySelector('[data-accordion-title]')
+        const content = accordion.querySelector('[data-accordion-content]')
+        title.addEventListener('click', function(){
+            [...accordions].forEach(item => { item.classList.remove('is-toggled'); item.querySelector('[data-accordion-content]').style.display = 'none'})
+            accordion.classList.toggle('is-toggled')
+            content.style.display = content.style.display == 'none' ? 'block' : 'none';
+        })
+    })
+
+    /**
+     * Secondary Nav
+     */
+    let secondaryNavObserver = new IntersectionObserver((entries) => { 
+        entries.forEach(entry => {
+            if(!entry.isIntersecting){
+                secondaryNav.classList.add('is-visible')
+            } else {
+                secondaryNav.classList.remove('is-visible')
+            }
+        })
+    }, 
+    {
+        threshold: 1,
+        rootMargin: '-1px 0px 0px 0px'
+    })
+
+    if(secondaryNav !== null) secondaryNavObserver.observe(secondaryNavTrigger)
+
+    function getSecondaryNavButtonWidth(){
+        const secondaryNavButtonWidth = secondaryNav.querySelector('.secondary-nav__btn').clientWidth
+        secondaryNav.style.setProperty("--secondary-nav-button-width", `${secondaryNavButtonWidth}px`)
+    }
+    if(secondaryNav !== null) getSecondaryNavButtonWidth()
+
+    /**
+     * Window resize function callbacks
+     */
+    const resizeHandler = function(){
+        // get header height
+        getHeaderHeight()
+        // if secondary nav exists
+        if(secondaryNav !== null) getSecondaryNavHeight()
+        if(secondaryNav !== null) getSecondaryNavButtonWidth()
+        //resize tease posts
+        teaseItems.forEach(tease => {
+            updateTeaseHeight(tease)        
+        })    
+    }
+    window.addEventListener('resize', resizeHandler)
 
 })

@@ -243,7 +243,7 @@ function css_dist() {
             preset: ['default', {
                 discardComments: {
                     removeAll: true,
-                },
+                }
             }]
         })
     ];
@@ -265,7 +265,7 @@ exports.clean_css_dist = clean_css_dist;
 * Twig compiler
 */
 
-function twig_build(){
+function twig_root(){
     return gulp.src(`${options.paths.src.base}/*.twig`)
     .pipe(data(function () {
         return JSON.parse(fs.readFileSync('./data.json'));
@@ -274,10 +274,23 @@ function twig_build(){
     .pipe(prettyHtml())
     .pipe(gulp.dest(options.paths.build.base));
 }
+exports.twig_root = twig_root;
 
+function twig_pages(){
+    return gulp.src(`${options.paths.src.base}/pages/**/*.twig`)
+    .pipe(data(function () {
+        return JSON.parse(fs.readFileSync('./data.json'));
+    }))
+    .pipe(twig())
+    .pipe(prettyHtml())
+    .pipe(gulp.dest(`${options.paths.build.base}/pages`));
+}
+exports.twig_pages = twig_pages;
+
+const twig_build = series(twig_root, twig_pages);
 exports.twig_build = twig_build;
 
-function twig_dist(){
+function twig_root_prettify(){
     return gulp.src(`${options.paths.src.base}/*.twig`)
     .pipe(data(function () {
         return JSON.parse(fs.readFileSync('./data.json'));
@@ -287,7 +300,18 @@ function twig_dist(){
     .pipe(processhtml())
     .pipe(gulp.dest(options.paths.dist.base));
 }
+function twig_pages_prettify(){
+    return gulp.src(`${options.paths.src.base}/pages/**/*.twig`)
+    .pipe(data(function () {
+        return JSON.parse(fs.readFileSync('./data.json'));
+    }))
+    .pipe(twig())
+    .pipe(prettyHtml())
+    .pipe(processhtml())
+    .pipe(gulp.dest(`${options.paths.dist.base}/pages`));
+}
 
+const twig_dist = series(twig_root_prettify, twig_pages_prettify);
 exports.twig_dist = twig_dist;
 
 /**

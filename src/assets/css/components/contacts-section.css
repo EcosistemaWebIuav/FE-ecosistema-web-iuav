@@ -1,0 +1,44 @@
+.contacts-section{
+    @apply bg-yellow py-[2.75vw] mt-[5.5vw];
+    &-cards-row{
+        @apply grid-container mb-[2.75vw];
+        &__inner{
+            @apply grid gap-x-[var(--grid-gutter)] grid-cols-4;
+        }
+        > p{
+            @apply font-bold mb-5;
+        }
+    }
+    &-card{
+        @apply bg-black text-yellow p-[var(--grid-gutter)] grid grid-cols-2;
+        p{
+            @apply text-yellow;
+        }
+        a{
+            @apply underline;
+        }
+        header{
+            p{
+                @apply text-size-md-lg mb-0;
+                &:last-child:not(:first-child){
+                    @apply text-size-base;
+                }
+            }
+        }
+        > div{
+            @apply aspect-square;
+            &:first-child{
+                @apply flex flex-col h-full;
+                header{
+                    @apply grow;
+                }
+                &:last-child{
+                    grid-column: span 2;
+                }
+            }
+        }
+        &--span{
+            grid-column: span 2;
+        }
+    }
+}

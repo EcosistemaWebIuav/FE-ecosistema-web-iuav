@@ -1,0 +1,29 @@
+.tease-wrapper{
+    @apply grid grid-cols-4 gap-x-5 gap-y-14;
+}
+
+.tease{
+    @apply aspect-square overflow-hidden relative;
+    &__img{
+        transition: height .2s ease;
+        @apply absolute top-0 left-0 w-full bg-grey-100;
+        img{
+            @apply w-full h-full object-cover object-top;
+        }
+    }
+    &__main{
+        .tease-main-header{
+            @apply py-3 flex justify-between text-size-sm text-grey-300;
+        }
+        .tease-main-title{
+            @apply  text-size-md font-bold;
+        }
+    }
+    &:hover{
+        .tease__img{
+            @apply h-full !important;
+        }
+        .tease__main{
+        }
+    }
+}

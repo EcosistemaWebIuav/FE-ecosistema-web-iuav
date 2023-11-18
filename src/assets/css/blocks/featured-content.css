@@ -1,0 +1,47 @@
+.block-featured-content-stacked{
+    @apply py-[3.5vw] bg-black text-white mb-20;
+    p{
+        @apply text-white;
+    }
+    &__inner{
+        .block-featured-content-stacked__img{
+            @apply aspect-[21/9];
+            img{
+                @apply w-full h-full object-cover;
+            }
+        }
+        .block-paragraph{
+            @apply mt-[3vw] lg:w-11/12;
+            p{
+                @apply text-size-md-lg;
+            }
+        }
+    }
+}
+
+.block-featured-content-cover{
+    @apply aspect-video relative mb-[4.5vw];
+    &__content{
+        @apply 
+            aspect-square 
+            max-w-[25vw]
+            absolute z-10 right-5 bottom-5 
+            bg-white text-black 
+            py-4 px-3 
+            flex flex-col
+            justify-between
+        ;
+        p{
+            @apply text-size-lg font-bold;
+        }
+        a{
+            @apply text-grey-300 block;
+        }
+    }
+    &__img{
+        @apply w-full h-full;
+        img{
+            @apply w-full h-full object-cover;
+        }
+    }
+}

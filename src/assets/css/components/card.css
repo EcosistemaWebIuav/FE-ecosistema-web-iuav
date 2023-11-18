@@ -1,0 +1,71 @@
+.card{
+    @apply relative bg-grey-100 p-4;
+    &--black{
+        @apply bg-black;
+        p, span{
+            @apply text-white;
+        }
+    }
+    &__content{
+        @apply aspect-square flex flex-col justify-between;
+    }
+    .card-header, .card-main{
+        @apply relative z-10;
+    }
+    .card-header{
+        @apply flex justify-between text-grey-300;
+    }
+    .card-date{
+        @apply text-size-sm;
+    }
+    .card-title{
+        @apply text-size-md font-bold;
+    }
+    .card-bg{
+        @apply absolute left-0 top-0 w-full h-full scale-125 origin-center opacity-0 pointer-events-none bg-black;
+        img{
+            @apply w-full h-full object-cover z-10 opacity-75;
+        }
+    }
+    &--has-background{
+        &.is-hovered{
+            @apply bg-transparent z-20;
+            p, span{
+                @apply text-yellow;
+            }
+            .card-bg{
+                @apply opacity-100;
+            }
+            &::after{
+                content: '';
+                @apply w-full h-full border border-yellow absolute left-0 top-0;
+            }
+        }
+    }
+    &--has-keyword{
+        .card-keyword{
+            font-size: calc(70vw / var(--card-keyword-chars));
+            @apply absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] opacity-0 pointer-events-none text-yellow whitespace-nowrap z-50;
+        }
+        &.is-hovered{
+            @apply z-20 bg-white;
+            .card-header{
+                span{
+                    @apply text-grey-300;
+                }
+            }
+            .card-main{
+                p, span{
+                    @apply text-black;
+                }
+            }
+            .card-keyword{
+                @apply opacity-100;
+            }
+            &::after{
+                content: '';
+                @apply w-full h-full border border-grey-200 absolute left-0 top-0;
+            }
+        }
+    }
+}

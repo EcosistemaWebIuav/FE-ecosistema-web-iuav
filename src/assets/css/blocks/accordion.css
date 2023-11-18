@@ -1,0 +1,102 @@
+.block-accordion{
+    &__inner{
+        @apply border-t border-grey-200;
+        > span{
+            @apply relative flex items-center;
+            @apply w-full text-size-lg py-[0.25vw] pl-[calc(3.5vw+1rem)] pr-[1vw] relative leading-none cursor-pointer;
+            &::before{
+                content: '';
+                background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M37.5 26H12.5V24H37.5V26Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24 37.5L24 12.5L26 12.5L26 37.5L24 37.5Z' fill='black'/%3E%3C/svg%3E%0A");
+                background-size: 100%;
+                transition: transform .2s ease;
+                @apply absolute top-0 left-0 w-[3.5vw] aspect-square bg-no-repeat bg-center mr-[1vw] rotate-0 -translate-y-[0.33vw];
+            }
+            &:hover{
+                @apply bg-black text-white;
+                &::before{
+                    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M37.5 26H12.5V24H37.5V26Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24 37.5L24 12.5L26 12.5L26 37.5L24 37.5Z' fill='white'/%3E%3C/svg%3E%0A");
+                }
+            } 
+        }
+        > div{
+            @apply py-[2.75vw] pl-[calc(3.5vw+1vw)] pr-[1.5vw];
+            > p{
+                @apply text-white mb-0;
+            }
+            div[class^="block-"]{
+                @apply mb-0;
+                p{
+                    @apply text-white;
+                }
+            }
+        }
+        &.is-toggled{
+            @apply bg-black text-white;
+            > span{
+                &::before{
+                    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M37.5 26H12.5V24H37.5V26Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24 37.5L24 12.5L26 12.5L26 37.5L24 37.5Z' fill='white'/%3E%3C/svg%3E%0A");
+                    @apply rotate-45;
+                    /* background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M34.545 16.868 16.867 34.546l-1.414-1.414 17.678-17.678 1.414 1.414Z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M33.13 34.546 15.454 16.868l1.414-1.414 17.678 17.678-1.414 1.414Z' fill='%23fff'/%3E%3C/svg%3E"); */
+                }
+            }
+            .block-link{
+                &::before{
+                    background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m34.711 24-6.778-7.32 1.467-1.36L38.363 25 29.4 34.68l-1.467-1.36L34.71 26H12v-2h22.711Z' fill='%23fff'/%3E%3C/svg%3E");
+                }
+                @apply border-grey-500;
+                &:hover{
+                    @apply bg-white text-black;
+                    &::before{
+                        background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m34.711 24-6.778-7.32 1.467-1.36L38.363 25 29.4 34.68l-1.467-1.36L34.71 26H12v-2h22.711Z' fill='%23000'/%3E%3C/svg%3E");
+                    }
+                }
+                &[href]:not(:where(
+                    /* exclude hash only links */
+                    [href^="#"],
+                    /* exclude relative but not double slash only links */
+                    [href^="/"]:not([href^="//"]),
+                    /* domains to exclude */
+                    /* [href*="//stackoverflow.com"], */
+                    /* subdomains to exclude */
+                    /* [href*="//meta.stackoverflow.com"] */
+                )){
+                    &::before{
+                        background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M31.0124 17.0725L21.043 16.6891L21.1198 14.6906L34.3016 15.1975L34.8086 28.3793L32.81 28.4562L32.4266 18.4867L16.3673 34.546L14.9531 33.1318L31.0124 17.0725Z' fill='white'/%3E%3C/svg%3E%0A");
+                    }
+                    &:hover{
+                        &::before{
+                            background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M31.0124 17.0725L21.043 16.6891L21.1198 14.6906L34.3016 15.1975L34.8086 28.3793L32.81 28.4562L32.4266 18.4867L16.3673 34.546L14.9531 33.1318L31.0124 17.0725Z' fill='black'/%3E%3C/svg%3E%0A");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &--2cols{
+        /* @apply columns-2; */
+        @apply lg:w-1/2;
+        /* @apply grid grid-cols-2;
+        > *{
+            @apply grid-row
+        } */
+        /* break-inside: avoid-column; */
+        .block-accordion__inner{
+            /* page-break-inside: avoid;
+            break-inside: avoid-column; */
+        }
+    }
+    &--sm{
+        /* @apply lg:w-1/2; */
+        .block-accordion__inner{
+            > span{
+                @apply text-size-md pl-[calc(2.5vw+0.75vw)];
+                &::before{
+                    @apply w-[2.5vw] -translate-y-0;
+                }
+            }
+            > div{
+                @apply py-4 pl-[calc(2.5vw+0.75vw)];
+            }    
+        }
+    }
+}

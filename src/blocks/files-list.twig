@@ -1,0 +1,14 @@
+{#
+ # Blocco lista di file da scaricare
+ #}
+
+<div class="block-container block-{{block.key}} {{block.classes}}">
+    <div class="block-{{block.key}}__inner">
+        <p>Download</p>
+        <ul>
+            {% for file in block.content.items %}
+                <li><a href="{{file.url}}">{{file.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

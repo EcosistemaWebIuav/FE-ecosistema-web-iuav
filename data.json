@@ -1,23 +1,1706 @@
 {
     "config": {
         "paths": {
-            "css": "./assets/css",
-            "js": "./assets/js",
-            "plugins": "./assets/js/vendor",
-            "img": "./assets/img"
+            "css": "/assets/css",
+            "js": "/assets/js",
+            "plugins": "/assets/js/vendor",
+            "img": "/assets/img"
         }
     },
     "site": {
         "title": "Università Iuav di Venezia",
+        "url": "/index.html",
         "email": "info@iuav.it",
-        "language_attributes": "it"
-    },
-    "sections": {
-        "header": {
-        },
-        "footer": {
+        "language_attributes": "it",
+        "global": {
+            "logo": "logo.png",
+            "address": "Santa Croce 191, Tolentini<br>30135 Venezia",
+            "law": {
+                "cf": "80009280274",
+                "vat": "00708670278"
+            }
         }
     },
-    "blocks": {},
-    "pages": {}
+    "blocks": {
+        "header": {
+            "topbar": {
+                "nav": [
+                    {
+                        "name": "Notizie e attività",
+                        "url": "/pages/news.html"
+                    },
+                    {
+                        "name": "Contatti",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Servizi",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Area personale",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Informazioni per",
+                        "url": "#"
+                    }
+                ]
+            },
+            "navbar": {
+                "nav": [
+                    {
+                        "name": "Ateneo",
+                        "url": "#",
+                        "children": [
+                            {
+                                "name": "Chi siamo",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Piani, programmazione e strategie",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Accordi relazioni e convenzioni",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Sostenibilità",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Didattica",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Parità di genere",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Immagine coordinata",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Amministrazione",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Direzione genearle",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Area didattica e servizi agli studenti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Area finanza e risorse umane",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Area ricerca, sistema bibliotecario e documentale",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Area tecnica",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Docenti",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Strutture didattiche, di ricerca e di servizio",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Dipartimenti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Scuole",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Laboratori",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Aggregazioni di ricerca",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Infrastrutture di ricerca",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Sistema bibliotecario",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Archivio progetti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Fondazioni",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Governo dell’ateneo",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Organi",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Verbali e deliberazioni",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Statuto e regolamenti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Elezioni",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Sedi",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Percorsi accessibili",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Calendario di chiusura delle sedi",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Senato degli studenti",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Organizzazione",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Progetti, attività ed eventi",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Spazi",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Sistema qualità",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Nucleo di valutazione",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Presidio della qualità",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Commissione didattica paritetica docenti-studenti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Gruppi assicurazioni della qualità",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Relazioni e attività",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Area personale",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Contatti",
+                                "url": "#"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Didattica",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Orientamento",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Ricerca",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Terza missione",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Internazionale",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Tirocinio e lavoro",
+                        "url": "#"
+                    }
+                ]
+            }
+        },
+        "footer": {
+            "nav": [
+                {
+                    "name": "Amministrazione",
+                    "url": "#",
+                    "children": [
+                        {
+                            "name": "Organi di governo",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Albo pretorio",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Amministrazione trasparente",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Note legali",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Informativa privacy",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Accessibilità",
+                            "url": "#"    
+                        }
+                    ]
+                },
+                {
+                    "name": "In evidenza",
+                    "url": "#",
+                    "children": [
+                        {
+                            "name": "Lavora con noi",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Servizi e procedure",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Notizie e attività",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Piano strategico",
+                            "url": "#"    
+                        },
+                        {
+                            "name": "Newsletter",
+                            "url": "#"    
+                        }
+                    ]
+                }
+            ],
+            "social_links": [
+                {
+                    "name": "Facebook",
+                    "url": "#"
+                },
+                {
+                    "name": "Twitter",
+                    "url": "#"
+                },
+                {
+                    "name": "Instagram",
+                    "url": "#"
+                },
+                {
+                    "name": "YouTube",
+                    "url": "#"
+                },
+                {
+                    "name": "LinkedIn",
+                    "url": "#"
+                },
+                {
+                    "name": "Telegram",
+                    "url": "#"
+                }
+            ],
+            "colophon": {
+                "nav": [
+                    {
+                        "name": "Rubrica contatti",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Area riservata",
+                        "url": "#"
+                    },
+                    {
+                        "name": "Mappa del sito",
+                        "url": "#"
+                    }
+                ]
+            }
+        }
+    },
+    "post_type": {
+        "pages": [
+            {
+                "title": "Homepage",
+                "url": "/index.html",
+                "blocks": [
+                    {
+                        "key": "banner-scroll",
+                        "content": {
+                            "title": "L’università pubblica di Venezia interamente dedicata al progetto",
+                            "images": [
+                                {
+                                    "filename": "hero-1",
+                                    "path": "/blocks/hero-banner",
+                                    "alt": "",
+                                    "speed": "1.5"
+                                },
+                                {
+                                    "filename": "hero-2",
+                                    "path": "/blocks/hero-banner",
+                                    "alt": "",
+                                    "speed": "1"
+                                },
+                                {
+                                    "filename": "hero-4",
+                                    "path": "/blocks/hero-banner",
+                                    "alt": "",
+                                    "speed": "1"
+                                },
+                                {
+                                    "filename": "hero-3",
+                                    "path": "/blocks/hero-banner",
+                                    "alt": "",
+                                    "speed": "0.8"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "links-list-columns",
+                        "classes": "mt-40",
+                        "content": {
+                            "list": [
+                                {
+                                    "name": "Open Day",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Cosa si studia",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Laboratori in mostra",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Chi siamo",
+                                    "url": "#"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "marquee-posts-grid",
+                        "classes": "mt-12 mb-40",
+                        "offset": null,
+                        "speed": "0.006",
+                        "content": [
+                            {
+                                "post_type": "eventi",
+                                "items": [0]
+                            },
+                            {
+                                "post_type": "news",
+                                "items": [0,1]
+                            },
+                            {
+                                "post_type": "eventi",
+                                "items": [1]
+                            },
+                            {
+                                "post_type": "notices",
+                                "items": [0]
+                            },
+                            {
+                                "post_type": "eventi",
+                                "items": [2,3]
+                            },
+                            {
+                                "post_type": "notices",
+                                "items": [1]
+                            }
+                        ]
+                    },
+                    {
+                        "key": "title",
+                        "classes": "mt-24",
+                        "tag": "h2",
+                        "content": {
+                            "title": "Ultime news",
+                            "link": {
+                                "url": "/pages/news.html",
+                                "label": "Vedi tutte"
+                            }
+                        }
+                    },
+                    {
+                        "key": "tease-row",
+                        "classes": "",
+                        "content": {
+                            "featured": [
+                                {
+                                    "post_type": "news",
+                                    "items": [2,3,4,5]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "featured-content-cover",
+                        "classes": "",
+                        "content": {
+                            "featured": {
+                                "post_type": "eventi",
+                                "id": 3
+                            }
+                        }
+                    },
+                    {
+                        "key": "title",
+                        "classes": "mt-16",
+                        "tag": "h2",
+                        "content": {
+                            "title": "Prossimi eventi",
+                            "link": {
+                                "url": "/pages/eventi.html",
+                                "label": "Vedi tutti"
+                            }
+                        }
+                    },
+                    {
+                        "key": "events-list-row",
+                        "content": {
+                            "title": "25.09.2023",
+                            "items": [
+                                {
+                                    "post_type": "eventi",
+                                    "id": [4,5]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "events-list-row",
+                        "content": {
+                            "title": "26.09.2023",
+                            "items": [
+                                {
+                                    "post_type": "eventi",
+                                    "id": [6]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "title",
+                        "classes": "mt-20",
+                        "tag": "h2",
+                        "content": {
+                            "title": "<strong>L’Università Iuav di Venezia offre corsi di laurea triennale, corsi di laurea magistrale e formazione post-laurea nei campi della progettazione architettonica, della pianificazione del territorio, del design e delle arti.</strong>",
+                            "link": null
+                        }
+                    },
+                    {
+                        "key": "links-list-columns",
+                        "content": {
+                            "list": [
+                                {
+                                    "name": "Architettura",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Arti multimediali",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Arti performative",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Arti visive",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Design degli interni",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Design del prodotto",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Design della comunicazione",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Moda",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Teatro",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Urbanistica",
+                                    "url": "#"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "images-grid",
+                        "classes": "block-images-grid--black",
+                        "content": {
+                            "images": [
+                                {
+                                    "filename": "gallery-1",
+                                    "path": "/blocks/images-grid"        
+                                },
+                                {
+                                    "filename": "gallery-2",
+                                    "path": "/blocks/images-grid"        
+                                },
+                                {
+                                    "filename": "gallery-3",
+                                    "path": "/blocks/images-grid"        
+                                },
+                                {
+                                    "filename": "gallery-4",
+                                    "path": "/blocks/images-grid"        
+                                },
+                                {
+                                    "filename": "gallery-5",
+                                    "path": "/blocks/images-grid"        
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "title",
+                        "classes": "mt-20",
+                        "tag": "h2",
+                        "content": {
+                            "title": "Link utili",
+                            "link": null
+                        }
+                    },
+                    {
+                        "key": "links-list-columns",
+                        "content": {
+                            "list": [
+                                {
+                                    "name": "Sistema bibliotecario",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Archivio progetti",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Procedure",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Concorsi",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Diritto allo studio",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Tasse e contributi",
+                                    "url": "#"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Strutture e network di ricerca",
+                "url": "#",
+                "blocks": [
+                    {
+                        "key": "breadcrumbs",
+                        "post_type": "pages",
+                        "parents": []
+                    }
+                ]
+            },
+            {
+                "title": "Sample Page",
+                "url": "/pages/sample-page.html",
+                "blocks": [
+                    {
+                        "key": "breadcrumbs",
+                        "post_type": "pages",
+                        "parents": [1]
+                    },
+                    {
+                        "key": "title",
+                        "classes": "block-title--sm block-title--divider",
+                        "tag": "h2",
+                        "content": {
+                            "title": "Testo semplice",
+                            "link": null
+                        }
+                    },
+                    {
+                        "key": "paragraph",
+                        "classes": "block-paragraph--sm block-paragraph--1col",
+                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec felis sed mauris maximus dictum. Quisque rutrum odio at lacinia pellentesque. Integer in sapien purus. Donec finibus, odio nec accumsan porttitor, velit nisl feugiat felis, eget aliquam dui purus et mi. Nulla vel lacinia ligula. Vestibulum a malesuada ante, in luctus sapien. Maecenas maximus ac quam sit amet pulvinar. Nulla quis ornare felis. Pellentesque tempus, urna et fermentum aliquet, tortor ipsum mattis lectus, ac blandit massa libero pellentesque magna. Nunc dignissim eros nunc, non condimentum turpis tristique vel. Aenean efficitur lectus vel enim vulputate tempus. Sed tincidunt arcu at dui facilisis ullamcorper.</p><p><strong>Sottotitolo</strong>Aliquam ut ligula rutrum, iaculis lorem vel, blandit magna. Donec tempus ut arcu et porta. Sed sit amet sapien in metus bibendum aliquet. Nam porta facilisis augue. Sed pellentesque diam vitae dolor dapibus, at mollis nisi rhoncus. Sed non ultrices enim. Nulla volutpat lacinia nunc eget viverra. Cras tristique est id lorem blandit malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>"
+                    },
+                    {
+                        "key": "title",
+                        "classes": "block-title--sm block-title--divider",
+                        "tag": "h2",
+                        "content": {
+                            "title": "Bottoni download",
+                            "link": null
+                        }
+                    },
+                    {
+                        "key": "paragraph",
+                        "classes": "block-paragraph--sm block-paragraph--1col",
+                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                    },
+                    {
+                        "key": "files-list",
+                        "classes": "",
+                        "content": {
+                            "items": [
+                                {
+                                    "name": "Bottone di download",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Bottone di download",
+                                    "url": "#"
+                                },
+                                {
+                                    "name": "Bottone di download",
+                                    "url": "#"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "title",
+                        "classes": "block-title--sm block-title--divider",
+                        "tag": "h2",
+                        "content": {
+                            "title": "Accordion di testo",
+                            "link": null
+                        }
+                    },
+                    {
+                        "key": "paragraph",
+                        "classes": "block-paragraph--sm block-paragraph--1col",
+                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                    },
+                    {
+                        "key": "accordion",
+                        "classes": "block-accordion--sm block-accordion--2cols",
+                        "content": {
+                            "items": [
+                                {
+                                    "title": "Titolo accordion 1",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Titolo accordion 2",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Titolo accordion 3",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Titolo accordion 4",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Titolo accordion 5",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "title",
+                        "classes": "block-title--sm block-title--divider",
+                        "tag": "h2",
+                        "content": {
+                            "title": "Lista elementi",
+                            "link": null
+                        }
+                    },
+                    {
+                        "key": "paragraph",
+                        "classes": "block-paragraph--sm block-paragraph--1col",
+                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                    },
+                    {
+                        "key": "grid-list",
+                        "classes": "",
+                        "content": {
+                            "items": [
+                                {
+                                    "label": "List",
+                                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."    
+                                },
+                                {
+                                    "label": "List",
+                                    "text": "Nunc ac purus id turpis pretium porta. Morbi lacinia nunc laoreet imperdiet volutpat. Sed nec nunc finibus, blandit erat quis, placerat orci. Donec at mauris ut lorem dictum fermentum nec sed velit."    
+                                },
+                                {
+                                    "label": "List",
+                                    "text": "Donec lacinia justo nec justo dictum tristique. Maecenas volutpat, nunc a aliquam lobortis, diam magna ultrices nisl, eu pretium eros mi ultricies enim. Cras dignissim sit amet mauris in ornare."    
+                                },
+                                {
+                                    "label": "List",
+                                    "text": "In id leo ut purus tempus placerat. Fusce ac pulvinar tellus, non lobortis est. Mauris sagittis ligula quis augue auctor ultrices. Curabitur sit amet egestas neque. Duis vulputate est id dignissim tempus. Nulla quis consectetur felis. Aenean volutpat velit tincidunt, viverra velit sed, hendrerit quam."    
+                                },
+                                {
+                                    "label": "List",
+                                    "text": "Vivamus vel ipsum quis est interdum facilisis. Mauris et arcu est. Etiam ultricies finibus commodo. Phasellus auctor ex sed lacus tristique, sit amet eleifend odio tincidunt."    
+                                },
+                                {
+                                    "label": "List",
+                                    "text": "Suspendisse commodo lacus luctus libero auctor suscipit. Maecenas non ullamcorper turpis. In suscipit quam interdum venenatis faucibus. Nam consectetur vehicula neque, scelerisque elementum ipsum lobortis vitae."    
+                                },
+                                {
+                                    "label": "List",
+                                    "text": "Phasellus sit amet faucibus elit. Vivamus lorem mi, posuere et aliquam nec, placerat consequat eros. Praesent justo turpis, feugiat id magna ut, euismod venenatis lacus."    
+                                },
+                                {
+                                    "label": "List",
+                                    "text": "In hac habitasse platea dictumst. Maecenas lobortis ligula justo, vitae laoreet augue laoreet nec. Mauris faucibus tempor massa, eget sodales arcu elementum quis."    
+                                }
+                            ]
+                        }
+                    },
+                    {
+                       "key": "featured-content-stacked",
+                       "content": {
+                            "title": {
+                                "key": "title",
+                                "classes": "",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Sezione in evidenza",
+                                    "link": {
+                                        "url": "#",
+                                        "label": "Link a pagina"
+                                    }
+                                }            
+                            },
+                            "image": {
+                                "filename": "architettura-3",
+                                "path": "/post_type/corsi",
+                                "alt": "iuav-laurea-triennale-architettura-open-day"    
+                            },
+                            "text": {
+                                "key": "paragraph",
+                                "classes": "",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"            
+                            }
+                        }
+                    },
+                    {
+                        "key": "title",
+                        "classes": "block-title--sm block-title--divider",
+                        "tag": "h2",
+                        "content": {
+                            "title": "Accordion in evidenza",
+                            "link": null
+                        }
+                    },
+                    {
+                        "key": "paragraph",
+                        "classes": "block-paragraph--sm block-paragraph--1col",
+                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                    },
+                    {
+                        "key": "accordion",
+                        "classes": "",
+                        "content": {
+                            "items": [
+                                {
+                                    "title": "Titolo accordion 1",
+                                    "inner_blocks": [
+                                        {
+                                            "key": "paragraph",
+                                            "classes": "",
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                                        },
+                                        {
+                                            "key": "links-list-columns",
+                                            "content": {
+                                                "list": [
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Titolo accordion 2",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Titolo accordion 3",
+                                    "inner_blocks": [
+                                        {
+                                            "key": "paragraph",
+                                            "classes": "",
+                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                                        },
+                                        {
+                                            "key": "links-list-columns",
+                                            "content": {
+                                                "list": [
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    },
+                                                    {
+                                                        "name": "Link list item",
+                                                        "url": "#"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Titolo accordion 4",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Titolo accordion 5",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "key": "contacts-section",
+                        "classes": "",
+                        "title": {
+                            "key": "title",
+                            "tag": "h2",
+                            "classes": "block-title--sm",
+                            "content": {
+                                "title": "Contatti"
+                            }            
+                        },
+                        "content": [
+                            {
+                                "title": null,
+                                "items": [
+                                    {
+                                        "title": "Card contatti con descrizione",
+                                        "subtitle": "Sottotitolo",
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                                        "email": "email@iuav.it",
+                                        "phone": "+39 041 000 000",
+                                        "links": null    
+                                    },
+                                    {
+                                        "title": "Card contatti semplice",
+                                        "subtitle": null,
+                                        "text": null,
+                                        "email": "email@iuav.it",
+                                        "phone": "+39 041 000 000",
+                                        "links": null    
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "news": {
+            "name": "News",
+            "url": "/pages/news.html",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "items": [
+                {
+                    "title": "Si chiudono in attivo le preiscrizioni ai corsi di laurea triennale e magistrale dell’Università Iuav di Venezia",
+                    "date": "1693461600",
+                    "featured_image": {
+                        "filename": "news-preiscrizioni",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [0]
+                },
+                {
+                    "title": "Iuav partecipa alla 18ma Mostra Internazionale di Architettura La Biennale di Venezia / The Laboratory of the Future",
+                    "date": "1689573600",
+                    "featured_image": {
+                        "filename": "news-biennale",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [0]
+                },
+                {
+                    "title": "Si è formato all’Università Iuav di Venezia Alessandro Petti, vincitore del Leone d’oro alla XVIII Biennale di Architettura",
+                    "date": "1684735200",
+                    "featured_image": {
+                        "filename": "news-petti",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [0]
+                },
+                {
+                    "title": "Siglato nuovo accordo tra Università Iuav di Venezia e Myongji University di Seoul / Corea del Sud",
+                    "date": "1694152800",
+                    "featured_image": {
+                        "filename": "news-seoul",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [0]
+                },
+                {
+                    "title": "Ieri all'Università Iuav di Venezia la consegna del premio Gregotti",
+                    "date": "1688623200",
+                    "featured_image": {
+                        "filename": "news-gregotti",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [1]
+                },
+                {
+                    "title": "Ursula von der Leyen all’Università Iuav di Venezia",
+                    "date": "1685080800",
+                    "featured_image": {
+                        "filename": "news-ursula",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [0]
+                }
+            ]
+        },
+        "notices": {
+            "name": "Avvisi",
+            "url": "/pages/avvisi.html",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "items": [
+                {
+                    "title": "Aperte fino al 10.11.2023 le iscrizioni per SSIBAP Scuola di specializzazione in beni architettonici e del paesaggio",
+                    "date": "1692079200",
+                    "featured_image": {
+                        "filename": "news-ssibap",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [0]
+                },
+                {
+                    "title": "Aperte fino al 13.09.2023 le iscrizioni per la laurea triennale in Urbanistica e pianificazione del territorio",
+                    "date": "1692079200",
+                    "featured_image": {
+                        "filename": "news-urbanistica",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [0]
+                },
+                {
+                    "title": "Aperte fino al 04.09.2023 le domande per 4 borse di studio “Bravi nello studio, bravi nello sport”",
+                    "date": "1688709600",
+                    "featured_image": {
+                        "filename": "avvisi-3",
+                        "path": "/post_type/news"
+                    },
+                    "terms": [1]
+                },
+                {
+                    "title": "Call for abstracts e call for paper per Vesper n. 10 Progetto Eden / Eden Project",
+                    "date": "1686463200",
+                    "featured_image": null,
+                    "keyword": "Vesper",
+                    "terms": [2]
+                },
+                {
+                    "title": "Elenco ammessi ai colloqui per la prova di ammissione al triennio in Architettura per l’anno accademico 2023/2024",
+                    "date": "1686376800",
+                    "featured_image": null,
+                    "keyword": "Architettura",
+                    "terms": [2]
+                }
+            ]
+        },
+        "eventi": {
+            "name": "Eventi",
+            "url": "/pages/eventi.html",
+            "description": "Nullam gravida eros ut velit imperdiet, quis gravida tellus porta. Mauris pharetra lorem ante, eu viverra enim suscipit et. Etiam blandit, massa at imperdiet sagittis, mi purus rutrum neque, sit amet convallis urna lectus ac lectus.",
+            "items": [
+                {
+                    "title": "Iuav dà il benvenuto agli studenti internazionali",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "date": {
+                        "start": {
+                            "day": "1695074400",
+                            "time": null
+                        },
+                        "end": {
+                            "day": "1695160800",
+                            "time": null
+                        }
+                    },
+                    "featured_image": null,
+                    "keyword": "Internazionale",
+                    "place": null
+                },
+                {
+                    "title": "ECTP / AITA 2023. 22nd European Conference and 17th International Workshop",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "date": {
+                        "start": {
+                            "day": "1695506400",
+                            "time": null
+                        },
+                        "end": {
+                            "day": "1695592800",
+                            "time": null
+                        }
+                    },
+                    "featured_image": null,
+                    "keyword": "ECTP",
+                    "place": null
+                },
+                {
+                    "title": "Petit Tour #66. La Colonia marina di Padova",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "date": {
+                        "start": {
+                            "day": "1694383200",
+                            "time": null
+                        },
+                        "end": {
+                            "day": "1694556000",
+                            "time": null
+                        }
+                    },
+                    "featured_image": null,
+                    "keyword": "Petit tour",
+                    "place": null
+                },
+                {
+                    "title": "Partecipa all’Open Day 2023 per scoprire i corsi di studio",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "date": {
+                        "start": {
+                            "day": "1695679200",
+                            "time": "10:00"
+                        },
+                        "end": {
+                            "day": "1698620400",
+                            "time": "18:00"
+                        }
+                    },
+                    "featured_image": {
+                        "filename": "open-day",
+                        "path": "/post_type/eventi"
+                    },
+                    "keyword": null,
+                    "place": null
+                },
+                {
+                    "title": "Attraversamenti. Materie e immaginari",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "date": {
+                        "start": {
+                            "day": "1695592800",
+                            "time": "10:00"
+                        },
+                        "end": {
+                            "day": "1695765600",
+                            "time": "18:00"
+                        }
+                    },
+                    "featured_image": {
+                        "filename": "eventi-attraversamenti",
+                        "path": "/post_type/eventi"
+                    },
+                    "keyword": null,
+                    "place": "Cotonificio, Università Iuav di Venezia"
+                },
+                {
+                    "title": "Venetie MML. La grande veduta, il lavoro raccontato",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "date": {
+                        "start": {
+                            "day": "1695592800",
+                            "time": "10:00"
+                        },
+                        "end": {
+                            "day": "1700953200",
+                            "time": "18:00"
+                        }
+                    },
+                    "featured_image": {
+                        "filename": "eventi-venetie-mml",
+                        "path": "/post_type/eventi"
+                    },
+                    "keyword": null,
+                    "place": "Centro Culturale Altinate, Padova"
+                },
+                {
+                    "title": "Longarone 1963-1972",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "date": {
+                        "start": {
+                            "day": "1695679200",
+                            "time": "10:00"
+                        },
+                        "end": {
+                            "day": "1698620400",
+                            "time": "18:00"
+                        }
+                    },
+                    "featured_image": {
+                        "filename": "eventi-longarone",
+                        "path": "/post_type/eventi"
+                    },
+                    "keyword": null,
+                    "place": "Sala Espositiva Longarone"
+                },
+                {
+                    "title": "Open City Research Platform. La ciudad abierta, Ritoque, Valparaìso, Cile",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "date": {
+                        "start": {
+                            "day": "1695247200",
+                            "time": null
+                        },
+                        "end": {
+                            "day": "1697839200",
+                            "time": null
+                        }
+                    },
+                    "featured_image": {
+                        "filename": "eventi-3",
+                        "path": "/post_type/eventi"
+                    },
+                    "keyword": null,
+                    "place": ""
+                }
+            ]
+        },
+        "attivita": {
+            "name": "Attività",
+            "url": "/pages/attivita.html",
+            "description": "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In malesuada consectetur dolor, eget ultricies diam hendrerit non. Maecenas consectetur condimentum erat, sit amet ornare nulla ullamcorper id.",
+            "items": [
+            ]
+        },
+        "courses": {
+            "nav": [
+                {
+                    "name": "Presentazione",
+                    "url": "#presentazione"
+                },
+                {
+                    "name": "Piano di studi",
+                    "url": "#piano-di-studi"
+                },
+                {
+                    "name": "Selezioni, immatricolazioni e ammissioni",
+                    "url": "#immatricolazioni"
+                },
+                {
+                    "name": "Tasse e contributi",
+                    "url": "#tasse-contributi"
+                },
+                {
+                    "name": "Open Day",
+                    "url": "#open-day"
+                },
+                {
+                    "name": "Ultime news",
+                    "url": "#news"
+                },
+                {
+                    "name": "Avvisi",
+                    "url": "#avvisi"
+                },
+                {
+                    "name": "Domande frequenti",
+                    "url": "#faq"
+                },
+                {
+                    "name": "Contatti",
+                    "url": "#contatti"
+                }
+            ],
+            "items": [
+                {
+                    "title": "Architettura",
+                    "banner_title": "La lunga tradizione della scuola di architettura, da Aldo Rossi a Carlo Scarpa",
+                    "terms": [0],
+                    "image": {
+                        "filename": "architettura",
+                        "path": "/post_type/corsi",
+                        "alt": "iuav-laurea-triennale-architettura"
+                    },
+                    "course_class": "L-4 - Classe delle lauree in Disegno industriale",
+                    "course_seats": "420",
+                    "course_cfu": "180 CFU",
+                    "course_duration": "3 anni",
+                    "course_coordination": "Mauro Cristina Marzo",
+                    "course_title": "Laurea triennale in Architettura",
+                    "course_language": "Italiano",
+                    "course_location": "Venezia",
+                    "course_department": "Dipartimento di Culture del progetto",
+                    "course_requirements": "Titolo di scuola superiore<br>Titolo straniero",
+                    "course_links": [
+                        {
+                            "name": "Orario delle lezioni",
+                            "url": "http://ext-domain.com",
+                            "external_name": "EasyStaff"
+                        },
+                        {
+                            "name": "Area riservata",
+                            "url": "http://ext-domain.com",
+                            "external_name": "MyIuav"
+                        },
+                        {
+                            "name": "Calendario didattico",
+                            "url": "#",
+                            "external_name": null
+                        },
+                        {
+                            "name": "Tipologia CFU",
+                            "url": "#",
+                            "external_name": null
+                        }
+                    ],
+                    "abstract": "",
+                    "content": "<p>Per chi sceglie Architettura, il luogo in cui si studia è particolarmente importante. E Venezia è la scuola del progetto. Studiare Architettura a Venezia significa vivere un'esperienza di studi unica, in una città che offre una lezione costante di storia, di arte, di sostenibilità.</p><p>I corsi di laurea in Architettura Iuav interpretano i bisogni di un mondo della professione in evoluzione: oggi un architetto deve essere in grado di leggere i luoghi, conoscerne la storia, coordinare competenze disciplinari diverse. Deve sapere comporre sensibilità umanistica, conoscenze tecniche e senso civico, per collaborare alla costruzione di spazi, città e ambienti sostenibili. Studiare Architettura a Venezia significa intraprendere un percorso orientato alla formazione di un progettista consapevole, capace di prendersi cura dell’ambiente fisico in cui vive una collettività e consegnarlo al futuro.</p><p>Il corso si caratterizza per il confronto continuo fra teoria e pratica, tra sapere e saper fare. Il laboratorio integrato è lo spazio della sperimentazione, dove chi studia verifica le conoscenze acquisite e le relazioni interdisciplinari che definiscono un progetto di architettura. Il percorso formativo trasmette le conoscenze culturali, metodologiche e tecniche che, alla fine del triennio, permettono al laureato di operare professionalmente con competenza e autonomia e offrire la base per proseguire gli studi con il corso di laurea magistrale. I workshop e i corsi monodisciplinari costruiscono un percorso ricco e articolato, che favorisce la maturazione di capacità critiche e pratico-operative. Il primo anno fornisce gli orizzonti culturali e i linguaggi di base; il secondo è dedicato alle tecniche costruttive e di controllo ambientale, mentre il terzo è focalizzato sul progetto urbano contemporaneo. L’esperienza centrale del triennio sono i workshop estivi di Architettura: tre settimane di progettazione intensiva sotto la guida di architetti di fama internazionale. Un’esperienza di straordinaria efficacia che non ha uguali nel mondo della formazione universitaria.</p>",
+                    "content_image": {
+                        "filename": "architettura-2",
+                        "path": "/post_type/corsi",
+                        "alt": "iuav-laurea-triennale-architettura"
+                    },
+                    "course_study_plan": [
+                        [
+                            {
+                                "name": "Storia dell'Architettura 1",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Elementi costruttivi",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Fondamenti di urbanistica",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Avviamento all’analisi matematica e geometrica (OFA)",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Teorie e metodi del disegno di architettura",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Analisi matematica e geometrica",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Laboratorio d’anno 1",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Workshop intensivo di progettazione 1-2",
+                                "url": "#"
+                            }
+                        ]
+                    ],
+                    "course_enrollment": {
+                        "files": [
+                            {
+                                "name": "Test 2022/2023",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Risposte esatte test 2022/2023",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Prova grafica estratta per Arti multimediali 2022/2023",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Prova grafica estratta per Design della moda 2022/2023",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Prova grafica estratta per Comunicazione e nuovi media della moda 2022/2023",
+                                "url": "#"
+                            }
+                        ]
+                    },
+                    "course_taxes": {
+                        "items": [
+                            {
+                                "label": "Contributo universitario",
+                                "text": "2.743,10 €<br><a href=\"#\">Informazioni sulle riduzioni per ISEE inferiore a 30 000 €</a>"
+                            },
+                            {
+                                "label": "Altre tasse",
+                                "text": "184 €<br>tassa regionale<br><br>16 €<br>imposta di bollo"
+                            },
+                            {
+                                "label": "Spese aggiuntive",
+                                "text": "Potrebbe essere necessario coprire costi aggiuntivi che non sono inclusi nelle tasse universitarie, come alloggi, trasporti e materiali. <a href=\"#\">Maggiori informazioni sulle spese aggiuntive</a>"
+                            },
+                            {
+                                "label": "Borse di studio",
+                                "text": "Nullam imperdiet sollicitudin tempus. Duis id risus semper, pretium neque in, sagittis massa. Nullam facilisis a condimentum. Maggiori informazioni sulle borse di studio. <a href=\"#\">Maggiori informazioni sulle borse di studio</a>"
+                            }
+                        ]
+                    },
+                    "course_focus": {
+                        "key": "featured-content-stacked",
+                        "classes": "",
+                        "content": {
+                            "title": {
+                                "key": "title",
+                                "classes": "",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Open day",
+                                    "link": {
+                                        "url": "#",
+                                        "label": "Section link"
+                                    }
+                                }            
+                            },
+                            "image": {
+                                "filename": "architettura-3",
+                                "path": "/post_type/corsi",
+                                "alt": "iuav-laurea-triennale-architettura-open-day"    
+                            },
+                            "text": {
+                                "key": "paragraph",
+                                "classes": "",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"            
+                            }
+                        }
+                    },
+                    "course_news": {
+                        "key": "tease-row",
+                        "classes": "",
+                        "content": {
+                            "featured": [
+                                {
+                                    "post_type": "news",
+                                    "items": [2,3,4,5]
+                                }
+                            ]
+                        }
+                    },
+                    "course_notices": {
+                        "key": "tease-row",
+                        "classes": "",
+                        "content": {
+                            "featured": [
+                                {
+                                    "post_type": "notices",
+                                    "items": [0,1,2,3]
+                                }
+                            ]
+                        }
+                    },
+                    "course_faq": {
+                        "key": "accordion",
+                        "classes": "block-accordion--sm block-accordion--2cols",
+                        "content": {
+                            "items": [
+                                {
+                                    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id?",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus?",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam?",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu?",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id?",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id?",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id?",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                },
+                                {
+                                    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id?",
+                                    "content": {
+                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "course_contacts": {
+                        "key": "contacts-section",
+                        "classes": "",
+                        "title": {
+                            "key": "title",
+                            "tag": "h2",
+                            "classes": "block-title--sm",
+                            "content": {
+                                "title": "Contatti"
+                            }            
+                        },
+                        "content": [
+                            {
+                                "title": "Contatti principali per architettura",
+                                "items": [
+                                    {
+                                        "title": "Gestione didattica e servizi agli studenti",
+                                        "subtitle": null,
+                                        "text": "Il servizio si occupa della definizione e gestione degli orari delle lezioni, delle iscrizioni alle attività didattiche e degli appelli d’esame. Indirizza gli studenti verso le attività didattiche da sostenere per lo svolgimento del proprio piano di studi, rilascia i programmi dei corsi, si occupa della gestione degli spazi dedicati alla didattica.",
+                                        "email": "segreteria.corsidistudio@iuav.it",
+                                        "phone": null,
+                                        "links": null
+                                    },
+                                    {
+                                        "title": "Iuav Infopoint",
+                                        "subtitle": null,
+                                        "text": "Applicazione web che offre un unico canale di comunicazione attraverso il quale puoi inviare le tue richieste agli uffici dell’ateneo.",
+                                        "email": null,
+                                        "phone": null,
+                                        "links": [
+                                            {
+                                                "name": "Accedi con credenziali Iuav",
+                                                "url": "#"
+                                            },
+                                            {
+                                                "name": "Accedi come utente esterno",
+                                                "url": "#"
+                                            }
+                                        ]
+                                    }    
+                                ]   
+                            },
+                            {
+                                "title": "Contatti principali per architettura",
+                                "items": [
+                                    {
+                                        "title": "Cotonificio",
+                                        "subtitle": null,
+                                        "text": null,
+                                        "email": "cotonificio.iuav@colser.com",
+                                        "phone": "+39 041 257 1801",
+                                        "links": null
+                                    },
+                                    {
+                                        "title": "Mauro Cristina Marzo",
+                                        "subtitle": null,
+                                        "text": null,
+                                        "email": "mauro.marzo@iuav.it",
+                                        "phone": null,
+                                        "links": null
+                                    }
+                                ]   
+                            }
+                        ]
+                    },
+                    "course_contacts_2": [
+                        {
+                            "title": "Contatti principali per achitettura",
+                            "items": [
+                            ]
+                        },
+                        {
+                            "title": "Contatti principali per achitettura",
+                            "items": [
+                                {
+                                    "title": "Cotonificio",
+                                    "subtitle": null,
+                                    "text": null,
+                                    "email": "cotonificio.iuav@colser.com",
+                                    "phone": "+39 041 257 1801",
+                                    "links": null
+                                },
+                                {
+                                    "title": "Mauro Cristina Marzo",
+                                    "subtitle": null,
+                                    "text": null,
+                                    "email": "mauro.marzo@iuav.it",
+                                    "phone": null,
+                                    "links": null
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "taxonomies": {
+        "news": {
+            "terms": [
+                {
+                    "name": "Comunicato stampa"
+                },
+                {
+                    "name": "Buone notizie"
+                }
+            ]
+        },
+        "notices": {
+            "terms": [
+                {
+                    "name": "Bandi"
+                },
+                {
+                    "name": "Atti"
+                },
+                {
+                    "name": "Comunicazioni"
+                }
+            ]
+        },
+        "courses": {
+            "terms": [
+                {
+                    "name": "Lauree triennali",
+                    "url": "/pages/corsi-laurea/index.html",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                }
+            ]
+        }
+    }
 }

@@ -1,0 +1,23 @@
+<div class="site-header-navbar">
+    <div class="site-header-navbar__container row">
+        <div class="columns">
+            <div class="w-full lg:w-1/4 column">
+                <a href="{{site.url}}" class="site-header-navbar__title">{{site.title}}</a>
+            </div>
+            <div class="w-full lg:w-3/4 column">
+                <nav class="site-header-navbar__main">
+                    <ul>
+                        {% for item in blocks.header.navbar.nav %}
+                            <li class="{% if loop.index == currentSection+1 %}is-selected{% endif %}{% if item.children %} menu-item-has-children{% endif %}">
+                                <a href="{{item.url}}">{{item.name}}</a>
+                                {% if item.children %}
+                                    {% include "../menu.twig" with {"items": item.children, "nesting": 0 } %}
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

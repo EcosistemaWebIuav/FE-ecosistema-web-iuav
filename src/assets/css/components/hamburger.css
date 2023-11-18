@@ -15,7 +15,7 @@
 	height: var(--hamburgerHeight);
 	border-radius: var(--hamburgerBorderRadiusPx);
 	background: var(--hamburgerBackgroundColor);
-    @apply cursor-pointer relative flex items-center;
+    @apply border border-grey-200 cursor-pointer relative flex items-center;
 	&:focus{
 		outline: none;
 	}

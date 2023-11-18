@@ -1,0 +1,34 @@
+<div class="block-{{block.key}}">
+    <div class="block-{{block.key}}__title">
+        <h3>{{block.content.title}}</h3>
+    </div>
+    <div class="block-{{block.key}}__list">
+        <ul>
+            {% for group in block.content.items %}
+                {% set type = group.post_type %}
+                {% for id in group.id %}
+                    {% set post = post_type[~type~].items[~id~] %}
+                    <li class="block-events-list-row-item">
+                        <div class="block-events-list-row-item__img">
+                            {% include "../layout/partials/picture.twig" with {"image": post.featured_image } %}
+                        </div>
+                        <div class="block-events-list-row-item__date">
+                            {% if post.date.end.time > post.date.start.time %}
+                                <span>{{post.date.start.time}}-{{post.date.end.time}}</span>
+                            {% else %}
+                                <span>{{post.date.start.time}}</span>
+                            {% endif %}
+                            <span>{{post.place}}</span>
+                        </div>
+                        <div class="block-events-list-row-item__title">
+                            <p>{{post.title}}</p>
+                            {% if post.date.end.day|date('d') > post.date.start.day|date('d') %}
+                                <span>Fino al {{post.date.end.day|date('d.m.Y')}}</span>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

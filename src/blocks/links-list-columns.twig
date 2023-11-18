@@ -1,0 +1,21 @@
+<div class="block-{{block.key}} {{block.classes}}">
+    <div class="grid-container">
+        <ul>
+            {% for item in block.content.list %}
+                {% set block_link = 
+                    {
+                        "key": "link",
+                        "url": item.url,
+                        "content": {
+                            "type": "int",
+                            "name": item.name
+                        }
+                    } 
+                %}
+                <li>
+                    {% include './link.twig' with {'block': block_link } %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

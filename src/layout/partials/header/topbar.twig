@@ -1,0 +1,17 @@
+<div class="site-header-topbar">
+    <div class="site-header-topbar__container grid-container">
+        <nav>
+            <ul>
+                {% for item in blocks.header.topbar.nav %}
+                    <li><a href="{{item.url}}">{{item.name}}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="site-header-topbar__actions">
+            <div class="site-header-topbar__lang">EN</div>
+            <button class="site-header-topbar__search">
+                {% include "../../../assets/img/icons/search.svg" %}
+            </button>
+        </div>
+    </div>
+</div>

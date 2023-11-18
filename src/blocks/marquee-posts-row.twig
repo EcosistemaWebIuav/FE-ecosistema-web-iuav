@@ -1,0 +1,40 @@
+{% set cards = 0 %}
+{% for group in block.content %}
+    {% for item in group.items %}
+        {% set cards = cards+1 %}
+    {% endfor %}
+{% endfor %}
+
+<div class="block-{{block.key}}" data-marquee-row data-marquee-row-items="{{cards}}" data-marquee-row-speed="{{block.speed}}" {% if block.offset %}style="margin-left:-{{block.offset}}px"{% endif %}>
+    <div class="block-{{block.key}}__wrapper">
+        {% for group in block.content %}
+            {% set type = group.post_type %}
+            {% for item in group.items %}
+                {% set post = post_type[~type~].items[~item~] %}
+                {% set categories = taxonomies.posts.terms %}
+                <a  href="#" class="card{% if type == 'eventi' %} card--black{% endif %}{% if post.featured_image %} card--has-background{% endif %}{% if post.keyword %} card--has-keyword{% endif %}">
+                    <div class="card__content">
+                        <div class="card-header">
+                            <span class="card-header__cat">{{post_type[~type~].name}}</span>
+                            {% if type != 'eventi' %}
+                                <span class="card-date">{{post.date|date('d.m.Y')}}</span>
+                            {% endif %}
+                        </div>
+                        <div class="card-main">
+                            {% if type == 'eventi' %}<span class="card-date">{{post.date.start.day|date('d')}}-{{post.date.end.day|date('d.m.y')}}</span>{% endif %}
+                            <p class="card-title">{{post.title}}</p>
+                        </div>
+                        {% if post.featured_image %}
+                            <div class="card-bg">
+                                {% include "../layout/partials/picture.twig" with {"image": post.featured_image } %}
+                            </div>
+                        {% endif %}
+                        {% if post.keyword %}
+                            <span class="card-keyword" style="--card-keyword-chars: {{post.keyword|length}}">{{post.keyword}}</span>
+                        {% endif %}
+                    </div>
+                </a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>

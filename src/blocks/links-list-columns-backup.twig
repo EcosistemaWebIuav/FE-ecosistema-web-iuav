@@ -1,0 +1,9 @@
+<div class="block-{{block.key}} {{block.classes}}">
+    <div class="grid-container">
+        <ul>
+            {% for item in block.content.list %}
+                <li><a href="{{item.url}}">{{item.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
