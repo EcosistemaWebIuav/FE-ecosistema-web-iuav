@@ -283,4 +283,27 @@ window.addEventListener('load', (event) => {
     }
     window.addEventListener('resize', resizeHandler)
 
+    /**
+     * Keyboard related functions and events
+     */
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        var isEscape = false;
+        if ('key' in evt) {
+            isEscape = (evt.key === 'Escape' || evt.key === 'Esc');
+        } else {
+            isEscape = (evt.keyCode === 27);
+        }
+        // if menu is open and press escape, toggle desktop or mobile menu
+        // based on media query
+        if (isEscape && menuIsOpen) {
+            toggleMenuSharedElements()
+            if (isDesktop.matches) {
+                toggleDesktopMenu()
+            } else {
+                toggleMobileMenu()
+            }
+        }
+    }
+
 })
