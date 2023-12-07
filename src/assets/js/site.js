@@ -39,7 +39,7 @@ window.addEventListener('load', (event) => {
      * Check if iOS, then set --vh
      */
     if (isIOS && window.matchMedia("(max-width: 1024px)").matches) {
-        $('html').addClass('is-ios')
+        document.documentElement.classList.add('is-ios')
     }
     
     function set100vh() {
@@ -89,7 +89,7 @@ window.addEventListener('load', (event) => {
         // const currentScrollPos = window.scrollY
 
         //if you start scrolling add class
-        if (currentScrollPos > 0) {
+        if (currentScrollPos > 0 && !menuIsOpen) {
             body.classList.add('is-scrolled')
         } else{
             body.classList.remove('is-scrolled')
@@ -97,11 +97,11 @@ window.addEventListener('load', (event) => {
         
         // if scrolling down, hide header and position logo to the left
         // if scrolling up, show header and logo in initial position
-        if (prevScrollPos > 0 && prevScrollPos < currentScrollPos ) {
+        if (prevScrollPos > 0 && prevScrollPos < currentScrollPos && !menuIsOpen) {
             header.classList.add('is-hidden')
             logo.classList.add('is-visible')
             overlay.classList.remove('is-active')
-        } else if (prevScrollPos >= currentScrollPos) {
+        } else if (prevScrollPos >= currentScrollPos && !menuIsOpen) {
             header.classList.remove('is-hidden')
             logo.classList.remove('is-visible')
         }

@@ -33,6 +33,9 @@
             @apply mt-3.75;
             li{
                 @apply border-t border-grey-500 md:border-t-0 flex items-center;
+                &:last-child{
+                    @apply border-b md:border-b-0;
+                }
                 &::before{
                     content: '';
                     @screen md{
