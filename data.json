@@ -246,57 +246,179 @@
                         "url": "#",
                         "children": [
                             {
-                                "name": "Chi siamo",
+                                "name": "Lauree triennali",
                                 "url": "#",
                                 "children": [
                                     {
-                                        "name": "Piani, programmazione e strategie",
+                                        "name": "Architettura",
                                         "url": "#"
                                     },
                                     {
-                                        "name": "Accordi relazioni e convenzioni",
+                                        "name": "Design della moda e arti multimediali",
                                         "url": "#"
                                     },
                                     {
-                                        "name": "Sostenibilità",
+                                        "name": "Design del prodotto, della comunicazione visiva e degli interni",
                                         "url": "#"
                                     },
                                     {
-                                        "name": "Didattica",
+                                        "name": "Design – Disegno industriale, sostenibilità e digitalizzazione (sede di Vicenza)",
                                         "url": "#"
                                     },
                                     {
-                                        "name": "Parità di genere",
-                                        "url": "#"
-                                    },
-                                    {
-                                        "name": "Immagine coordinata",
+                                        "name": "Urbanistica e pianificazione del territorio",
                                         "url": "#"
                                     }
                                 ]
                             },
                             {
-                                "name": "Amministrazione",
+                                "name": "Lauree magistrali",
                                 "url": "#",
                                 "children": [
                                     {
-                                        "name": "Direzione generale",
+                                        "name": "Architettura",
                                         "url": "#"
                                     },
                                     {
-                                        "name": "Area didattica e servizi agli studenti",
+                                        "name": "Arti visive e moda",
                                         "url": "#"
                                     },
                                     {
-                                        "name": "Area finanza e risorse umane",
+                                        "name": "Design del prodotto, della comunicazione e degli interni",
                                         "url": "#"
                                     },
                                     {
-                                        "name": "Area ricerca, sistema bibliotecario e documentale",
+                                        "name": "MA in Architecture",
                                         "url": "#"
                                     },
                                     {
-                                        "name": "Area tecnica",
+                                        "name": "Teatro e arti performative",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Urbanistica e pianificazione del territorio",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Scuola di dottorato",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Iscriviti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "News ed eventi",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Contatti",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "SSIBAP Scuola di specializzazione",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Iscriviti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "News ed eventi",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Contatti",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Workshop e attività",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "W.A.Ve.",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Workshop #1",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Workshop #2",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Master e corsi",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Master",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Corsi di perfezionamento",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Corsi singoli",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Corsi VIU",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Ambiti",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Architettura",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Arti multimediali",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Arti performative",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Arti visive",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Design degli interni",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Design del prodotto",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Design della comunicazione",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Moda",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Teatro",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Urbanistica",
                                         "url": "#"
                                     }
                                 ]
@@ -305,23 +427,489 @@
                     },
                     {
                         "name": "Orientamento",
-                        "url": "#"
+                        "url": "#",
+                        "children": [
+                            {
+                                "name": "Vivere e studiare a Venezia",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Attività culturali",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Attività sportive",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Alloggi",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Mense",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Servizi di assistenza socio-sanitaria e a richiesta",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Corsi",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Mobilità e trasporti",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Open Day",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Laboratori in mostra",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Fashion at Iuav",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Design Open Lab",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "MA Degree Show Iuav 2023",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Laboratorio in mostra #1",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Laboratorio in mostra #2",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Attività per gli studenti in entrata",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "PCTO – Percorsi per le Competenze Trasversali e l’Orientamento",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Visite nelle scuole",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Lezioni d'estate",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Colloqui individuali",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Corsi di preparazione al test d'ingresso",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Alumni",
+                                "url": "#"
+                            }
+                        ]
                     },
                     {
                         "name": "Ricerca",
-                        "url": "#"
+                        "url": "#",
+                        "children": [
+                            {
+                                "name": "Strategia e governance",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Organizzazione",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Comitato etico",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Programmi di finanziamento",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Missioni e trasferte per la ricerca",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Tipologie di ricerca",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Progetti di ricerca",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Assegni di ricerca",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Borse di ricerca",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Contratti di ricerca",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Dottorati",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Strutture e network di ricerca",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Laboratori",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Aggregazioni",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Cluster",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Unità di ricerca",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Infrastrutture",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Centro Superiore",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Avviare una ricerca",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Presentare un progetto",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Avviare un progetto",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Gestire un progetto",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Comunicare un progetto",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Valutazione della ricerca",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Valutazione dalla qualità della ricerca – VQR",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Valutatori per la ricerca",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Divulgazione della ricerca",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Archivio istituzionale della ricerca – Air",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Open access",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Open science",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Horizon Europe e Open Access",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Open Access: diritti d’autore e licenze d’uso",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "APC e costi di pubblicazione: l'opportunità Wiley",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Archivi Open Access",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Editoria e attività informativo-promozionale",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Edizioni",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Dipartimento",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Scuola di dottorato",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Centro studi ClassicA",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Riviste",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Giornale Iuav",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Tutte le pubblicazioni",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Contatti",
+                                "url": "#"
+                            }
+                        ]
                     },
                     {
                         "name": "Terza missione",
-                        "url": "#"
+                        "url": "#",
+                        "children": [
+                            {
+                                "name": "Public engagement",
+                                "url": "#"
+                            },
+                            {
+                                "name": "Spin-off",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Regolamenti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Elenco spin-off",
+                                        "url": "#"
+                                    }
+                                ]
+                            },         
+                            {
+                                "name": "Imprese ed enti",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Avviare un accordo",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Informazioni aggiuntive",
+                                        "url": "#"
+                                    }
+                                ]
+                            },         
+                            {
+                                "name": "Progetti, attività ed eventi",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Promuovere un evento",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Elenco attività",
+                                        "url": "#"
+                                    }
+                                ]
+                            },         
+                            {
+                                "name": "Divulgazione",
+                                "url": "#"
+                            },         
+                            {
+                                "name": "Contatti",
+                                "url": "#"
+                            }         
+                        ]
                     },
                     {
                         "name": "Internazionale",
-                        "url": "#"
+                        "url": "#",
+                        "children": [
+                            {
+                                "name": "Studenti in arrivo",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Fare domanda",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Informazioni aggiuntive",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Contatti",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Studenti in partenza",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Erasmus+ Studio",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Erasmus+ Traineeship",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Erasmus+ ICM",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Workshop internazionali",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Progetto EUREKA",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Contatti",
+                                        "url": "#"
+                                    }
+                                ]
+                            },         
+                            {
+                                "name": "Mobilità docenti",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Avviare un accordo",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Avviare un workshop internazionale",
+                                        "url": "#"
+                                    }
+                                ]
+                            },         
+                            {
+                                "name": "Mobilità personale tecnico-amministrativo",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Avviare un accordo",
+                                        "url": "#"
+                                    }
+                                ]
+                            },         
+                            {
+                                "name": "Relazioni internazionali",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Partenariati strategici",
+                                        "url": "#"
+                                    }
+                                ]
+                            },         
+                            {
+                                "name": "Contatti",
+                                "url": "#"
+                            }         
+                        ]
                     },
                     {
                         "name": "Tirocinio e lavoro",
-                        "url": "#"
+                        "url": "#",
+                        "children": [
+                            {
+                                "name": "Tirocinio",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Avviare un tirocinio per studenti iscritti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Avviare un tirocinio per laureati",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Avviare un tirocinio per enti e aziende",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Lavoro",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Professione e aggiornamento",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Opportunità e servizi",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Contatti",
+                                "url": "#"
+                            }         
+                        ]
                     }
                 ]
             }

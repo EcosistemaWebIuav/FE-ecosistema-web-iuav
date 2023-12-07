@@ -28,7 +28,10 @@
         <ul class="{{key}} {{key}}-{{nesting}}">
             {% for sub_item in items %}
                 <li>
-                    <a href="{{sub_item.url}}">{{sub_item.name}}</a>
+                    <div class="menu-item">
+                        <div class="menu-item-overlay"></div>
+                        <a href="{{sub_item.url}}">{{sub_item.name}}</a>
+                    </div>
                     {% if sub_item.children %}
                         {% include "./menu.twig" with {"items": sub_item.children, "nesting": nesting+1 } %}
                     {% endif %}

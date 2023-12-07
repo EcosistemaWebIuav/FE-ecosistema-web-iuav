@@ -76,15 +76,36 @@
             @apply font-bold xl:w-1/4;
         }
         &-submenu{
+            li{
+                .menu-item{
+                    @apply relative overflow-hidden;
+                    &-overlay{
+                        @apply absolute z-10 !important;
+                        @apply bg-black w-full h-full block overflow-hidden top-0 left-0 pointer-events-none opacity-100;            
+                    }
+                    > a{
+                        transition: color .4s ease;
+                        @apply block text-black;
+                    }
+                    &:hover{
+                        > a{
+                            @apply relative text-white z-20;
+                        }
+                    }
+                }
+            }
             > li{
                 @apply mr-0;
-                > a{
-                    @apply inline-block w-full py-2 text-size-sm;
+                > .menu-item{
+                    > a{
+                        @apply inline-block w-full py-2 text-size-sm;
+                    }
                 }
             }
             &-0{
                 padding-left: var(--grid-offset);
                 padding-right: calc(var(--grid-gutter) * 2);
+                orphans: 1;
                 @apply 
                     absolute
                     bottom-0 
@@ -95,7 +116,7 @@
                     columns-3 
                     pt-10
                     pb-12.5
-                    gap-x-[calc(var(--gutter-grid)*2)] 
+                    gap-x-[calc(var(--grid-gutter)*2)] 
                     opacity-0 invisible pointer-events-none
                 ;
                 @at-root .site-header-navbar__main ul li.is-toggled .site-header-navbar-submenu-0{
@@ -105,18 +126,22 @@
                     @apply hidden;
                 }
                 > li {
-                    @apply inline-block w-full;
-                    > a{
-                        @apply font-bold border-t-2 border-grey-400;
+                    @apply break-inside-avoid;
+                    > .menu-item{
+                        > a{
+                            @apply font-bold border-t-2 border-grey-400;
+                        }
                     }
                 }
             }
             &:not(.site-header-navbar-submenu-0){
                 > li{
                     @apply border-t border-grey-200;
-                    @apply grid grid-cols-4 gap-x-[var(--size-ratio-base)];
-                    > a{
-                        grid-column: 2 / 5;
+                    .menu-item{
+                        @apply grid grid-cols-4 gap-x-[var(--size-ratio-base)];
+                        > a{
+                            grid-column: 2 / 5;
+                        }
                     }
                 }
             }

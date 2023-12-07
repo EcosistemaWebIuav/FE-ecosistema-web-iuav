@@ -27,6 +27,7 @@ window.addEventListener('load', (event) => {
     const logo = document.querySelector('.site-logo')
     const a11y_ariaexpanded = document.querySelectorAll('[aria-expanded="false"]')
     const menuItems = document.querySelectorAll('#site-header-main-nav > ul > .menu-item-has-children')
+    const menuSubItems = document.querySelectorAll('.site-header-navbar-submenu-0 li .menu-item')
     const menuBtn = document.getElementById('menu-btn')
     const overlay = document.getElementById('overlay')
     const menuMobile = document.getElementById('menu-mobile') 
@@ -188,18 +189,79 @@ window.addEventListener('load', (event) => {
         }
     }
 
+    function animateMenuItemsOverlay(e, itemOverlay, mouseenter = true){
+
+        // Get the bounding rectangle of target
+        const target = e.target
+        const rect = target.getBoundingClientRect()
+        let height = rect.height
+        // Mouse position
+        const y = e.clientY - rect.top
+
+        const inOutFromTop = (y < height / 2) ? true : false
+        
+        let itemOverlayAnimations
+        let itemTransform
+
+        if (inOutFromTop && mouseenter) {
+            itemOverlayAnimations = itemOverlay.animate([
+                {transform: 'translate3d(0, -101%, 0)'},
+                {transform: 'translate3d(0, 0, 0)'}
+            ], 250)
+            itemTransform = '0%'
+        } else if (inOutFromTop && !mouseenter) {
+            itemOverlayAnimations = itemOverlay.animate([
+                {transform: 'translate3d(0, 0, 0)'},
+                {transform: 'translate3d(0, -101%, 0)'}
+            ], 250)
+            itemTransform = '-101%'
+        } else if (!inOutFromTop && mouseenter) {
+            itemOverlayAnimations = itemOverlay.animate([
+                {transform: 'translate3d(0, 101%, 0)'},
+                {transform: 'translate3d(0, 0, 0)'}
+            ], 250)
+            itemTransform = '0%'
+        } else if (!inOutFromTop && !mouseenter) {
+            itemTransform = '101%'
+            itemOverlayAnimations = itemOverlay.animate([
+                {transform: 'translate3d(0, 0, 0)'},
+                {transform: 'translate3d(0, 101%, 0)'}
+            ], 250)
+        }
+
+        itemOverlayAnimations.addEventListener('finish', function() {
+            itemOverlay.style.transform = `translate3d(0, ${itemTransform}, 0)`;
+        })
+    }
+
+    function openSubMenu(event){
+        const item = event.target.closest('li')
+        event.preventDefault()
+        if (item.classList.contains('is-toggled')) {
+            toggleMenuSharedElements()
+            toggleDesktopMenu()
+        } else if (desktopMenuIsOpen){
+            toggleDesktopMenu(this)
+        } else {
+            toggleMenuSharedElements()
+            toggleDesktopMenu(this)
+        }
+    }
+
     menuItems.forEach(item => {
-        item.addEventListener('click', function(e){
-            e.preventDefault()
-            if (item.classList.contains('is-toggled')) {
-                toggleMenuSharedElements()
-                toggleDesktopMenu()
-            } else if (desktopMenuIsOpen){
-                toggleDesktopMenu(this)
-            } else {
-                toggleMenuSharedElements()
-                toggleDesktopMenu(this)
-            }
+        item.addEventListener('click', openSubMenu)
+    })
+
+    menuSubItems.forEach(subItem => {
+        const subItemOverlay = subItem.querySelector('.menu-item-overlay')
+        subItemOverlay.style.transform = 'translate3d(0, -101%, 0)'
+
+        subItem.addEventListener('mouseenter', function (e) {
+            animateMenuItemsOverlay(e, subItemOverlay)
+        })
+
+        subItem.addEventListener('mouseleave', function (e) {
+            animateMenuItemsOverlay(e, subItemOverlay, false)
         })
     })
     
