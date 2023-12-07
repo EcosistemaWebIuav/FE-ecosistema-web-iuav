@@ -1,6 +1,8 @@
-<footer class="site-footer">
+<footer class="site-footer" id="site-footer" role="contentinfo">
+    <button class="site-footer__backTop" id="backToTop">Torna in cima</button>
     <div class="grid-container site-footer__title">
-        <p>{{site.title}}</p>
+        {% include "../assets/img/logo.svg" %}
+        <p><span>Università</span> Iuav di Venezia</p>
     </div>
     <div class="grid-container site-footer__main">
         <div>
@@ -13,7 +15,7 @@
         </div>
         <div class="site-footer__nav">
             <span>{{blocks.footer.nav[0].name}}</span>
-            <nav>
+            <nav aria-label="Amministrazione" role="navigation">
                 <ul>
                     {% for item in blocks.footer.nav[0].children %}
                         <li><a href="{{item.url}}">{{item.name}}</a></li>
@@ -23,7 +25,7 @@
         </div>
         <div class="site-footer__nav">
             <span>{{blocks.footer.nav[1].name}}</span>
-            <nav>
+            <nav aria-label="In evidenza" role="navigation">
                 <ul>
                     {% for item in blocks.footer.nav[1].children %}
                         <li><a href="{{item.url}}">{{item.name}}</a></li>
@@ -31,19 +33,17 @@
                 </ul>
             </nav>
         </div>
-        <div class="site-footer__social-links">
+        <div class="site-footer__social-links" aria-label="Link social" role="navigation">
             <span>Seguici su</span>
-            <nav>
-                <ul>
-                    {% for item in blocks.footer.social_links %}
-                        <li><a href="{{item.url}}">{{item.name}}</a></li>
-                    {% endfor %}
-                </ul>
-            </nav>
+            <ul>
+                {% for item in blocks.footer.social_links %}
+                    <li><a href="{{item.url}}">{{item.name}}</a></li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     <div class="grid-container site-footer__colophon">
-        <nav>
+        <nav aria-label="Link a rubrica e area riservata" role="navigation">
             <ul>
                 {% for item in blocks.footer.colophon.nav %}
                     <li><a href="{{item.url}}">{{item.name}}</a></li>

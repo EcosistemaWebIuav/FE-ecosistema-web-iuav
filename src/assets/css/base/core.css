@@ -3,7 +3,7 @@
 */
 
 html{
-    @apply scroll-smooth min-h-screen;
+    @apply min-h-screen;
 }
 
 .content{

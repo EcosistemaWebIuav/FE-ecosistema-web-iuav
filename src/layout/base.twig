@@ -6,25 +6,38 @@
 
     <body data-template="base.twig" class="{{bodyClasses}}">
 
-		<a href="{{site.url}}" class="site-logo" id="site-logo">
+		<div class="skip-link" role="navigation" aria-label="Vai al contenuto">
+			<a href="#site-content-wrapper">Vai al contenuto della pagina</a>
+			{# <a href="#site-header-main-nav">Vai al menu principale</a> #}
+		</div>
+
+		<a href="{{site.url}}" class="site-logo" id="site-logo" tabindex="-1">
 			{% include "../assets/img/logo.svg" %}
 		</a>
 
 		<div id="overlay"></div>
 
 		{% include 'header.twig' %}
+		
+		{% include './partials/mobilemenu.twig' %}
 
-		<main id="content" role="main" class="content">
-			{% block breadcrumbs %}{% endblock %}
-			{% block banner %}{% endblock %}
-			{% block content %}
-				Sorry, no content
+		<div id="site-content-wrapper">
+
+			<main id="content" role="main" class="content">
+				{% block breadcrumbs %}{% endblock %}
+				{% block banner %}{% endblock %}
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</main>
+
+			{% block footer %}
+				{% include 'footer.twig' %}
 			{% endblock %}
-		</main>
 
-		{% block footer %}
-			{% include 'footer.twig' %}
-		{% endblock %}
+		</div>
+
+
 
 		{% include "script-footer.twig" %}
 	</body>

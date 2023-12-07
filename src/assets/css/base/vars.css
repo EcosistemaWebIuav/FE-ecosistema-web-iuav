@@ -1,0 +1,7 @@
+:root{
+    --vh: 100vh;
+    --spacing-size: 0.625rem; /* 10px */
+    @screen lg{
+        --spacing-size: var(--grid-gutter);
+    }
+}

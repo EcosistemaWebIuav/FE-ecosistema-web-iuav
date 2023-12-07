@@ -1,23 +1,23 @@
 .hamburger-btn {
     --hamburgerPadding: 8px;
-    --hamburgerWidth: 42px;
-    --hamburgerHeight: 42px;
+    --hamburgerWidth: 50px;
+    --hamburgerHeight: 50px;
     --hamburgerLineWidth: 24px;
     --hamburgerLineHeight: 2px;
     --hamburgerMargin: 6px;
     --hamburgerBackground: true;
-    --hamburgerBackgroundColor: #F7F7F7;
+    --hamburgerBackgroundColor: transparent;
     --hamburgerColor: #242424;
-    --hamburgerBorderRadius: true;
-    --hamburgerBorderRadiusPx: 6px;
+    --hamburgerBorderRadius: false;
+    --hamburgerBorderRadiusPx: 0;
 	padding: var(--hamburgerPadding);
 	width: var(--hamburgerWidth);
 	height: var(--hamburgerHeight);
 	border-radius: var(--hamburgerBorderRadiusPx);
 	background: var(--hamburgerBackgroundColor);
-    @apply border border-grey-200 cursor-pointer relative flex items-center;
+    @apply cursor-pointer relative flex items-center;
 	&:focus{
-		outline: none;
+		/* outline: none; */
 	}
 	span{
 		margin: 0 auto;
@@ -28,7 +28,7 @@
 		height: var(--hamburgerLineHeight);
 		border-radius: 5px;
 		background-color: var(--hamburgerColor);
-		transition: background-color .1s .1s ease;
+		/* transition: background-color .1s .1s ease; */
 		display: block;
 		&::before, &::after{
 			content: '';
@@ -42,27 +42,27 @@
 		&::before{
 			margin-top: calc(var(--hamburgerMargin) * -1);
 			transform: rotate(0deg);
-			transition: margin .2s .2s ease, transform .2s ease;
+			/* transition: margin .2s .2s ease, transform .2s ease; */
 		}
 		&::after{
 			margin-top: var(--hamburgerMargin);
 			transform: rotate(0deg);
-			transition: margin .2s .2s ease, transform .2s ease;
+			/* transition: margin .2s .2s ease, transform .2s ease; */
 		}
 	}
 	&.is-toggled{
 		span{
 			background-color: transparent !important;
-			transition: background-color .2s ease;
+			/* transition: background-color .2s ease; */
 			&:before{
 				margin-top: 0;
 				transform: rotate(45deg);
-				transition: margin .2s ease, transform .2s .2s ease;
+				/* transition: margin .2s ease, transform .2s .2s ease; */
 			}
 			&:after{
 				margin-top: 0;
 				transform: rotate(-45deg);
-				transition: margin .2s ease, transform .2s .2s ease;
+				/* transition: margin .2s ease, transform .2s .2s ease; */
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 .breadcrumbs{
-    @apply grid-container mt-[6.75vw] mb-[2.75vw];
+    @apply grid-container mt-6.25 mb-10 md:mt-15 md:mb-20 xl:my-25;
     ul{
-        @apply flex;
+        @apply flex flex-wrap;
         li{
             @apply text-size-lg;
             &:not(:last-child){

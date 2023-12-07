@@ -1,4 +1,7 @@
-{% set paths_base = '..' %}
+{% if paths_base == null %}
+    {% set paths_base = '..' %}
+{% endif %}
+
 {% set bodyClasses = 'page' %}
 
 {% extends "base.twig" %}

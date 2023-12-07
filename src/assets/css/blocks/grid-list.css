@@ -1,7 +1,7 @@
 .block-grid-list{
     container-type: inline-size;
     &__inner{
-        @apply grid gap-x-5 gap-y-8;
+        @apply grid gap-x-[calc(var(--grid-gutter)*2)] gap-y-[2vw];
         > div{
             @apply border-t border-grey-200 pt-2;
             p{

@@ -1,60 +1,32 @@
 :root{
-    --grid-offset: 8.25vw;
-    --grid-gutter: 0.75vw;
-}
-
-.row{
-    @apply grid-container;
-    .row, .row-fluid{
-        @apply px-0 ml-0 w-full;
-    }
-}
-/* .row{
-    @apply px-5 mx-auto w-full;
+    --grid-offset: 0;
     @screen md{
-        @apply max-w-screen-md;
+        --grid-offset: 120px;
     }
-    @screen lg{
-        @apply max-w-screen-lg;
-    }
+    --grid-gutter: 0.46875rem; /* 7.5px */
     @screen xl{
-        @apply max-w-screen-xl;
-    }
-    @screen 2xl{
-        @apply max-w-screen-2xl;
-    }
-    .row, .row-fluid{
-        @apply px-0;
-    }
-} */
-
-.row-fluid{
-    @apply px-2.5;
-    .row, .row-fluid{
-        @apply px-0;
+        --grid-gutter: 0.625rem; /* 10px */
     }
 }
 
-.columns{
-    @apply flex flex-wrap -mx-2.5;
-}
-
-.column{
-    @apply px-2.5;
-}
-
-.grid-container, .block-container{
-    width: calc(100vw - var(--grid-offset));
-    margin-left: calc(var(--grid-offset) - var(--grid-gutter));
-    margin-right: calc(var(--grid-gutter) * 2);
-    @apply px-[var(--grid-gutter)];
-    .grid-container, .block-container{
+.grid-container{
+    @apply row;
+    :where(.grid-container), :where(.block-container){
         @apply w-full ml-0 mr-0 px-0;
     }
 }
 
 @layer utilities{
-    .grid-container-offset{
-        @apply ml-[120px] mr-auto max-w-none;
+    .row{
+        @apply w-full px-[calc(var(--grid-gutter)*2)] md:px-0;
+        margin-left: var(--grid-offset);
+        @screen md{
+            width: calc(100vw - var(--grid-offset) - var(--grid-gutter)*2);
+        }
+        /* margin-right: calc(var(--grid-gutter) * 2); */
+        @screen 2xl{
+            max-width: theme(screens.2xl);
+            margin-left: max(var(--grid-offset), calc((100vw - theme(screens.2xl))/2))
+        }
     }
 }

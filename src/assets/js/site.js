@@ -1,33 +1,74 @@
+/**
+ * Global scripts
+ */
+
 window.addEventListener('load', (event) => {
 
-    const body = document.body
+    /**
+     * Vars
+     */
 
-    // If less than most tablets, set CSS var to window height.
+    //functional
     let vh = '100vh'
+    let currentScrollPos = 0
+    let prevScrollPos = 0
+    let menuToggledScrollPos
+    let menuIsOpen = false
+    let desktopMenuIsOpen = false
+    let mobileMenuIsOpen = false
 
-    // Check if iOS
+    //media query
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
-    if (isIOS && window.matchMedia("(max-width: 1024px)").matches) {
-        $('html').addClass('is-ios')
-        set100vhVar()
-    }
-    
-    function set100vhVar() {
-        // If window size is iPad or smaller, then use JS to set screen height.
-        if (window.innerWidth && window.innerWidth <= 1024) {
-            vh = `${window.innerHeight}px`
-        }
-        document.documentElement.style.setProperty("--vh", vh)
-    }
+    const isDesktop = window.matchMedia('(min-width: 80rem)')
 
-    const wh = window.innerHeight
+    // DOM elements
+    const body = document.body
     const header = document.querySelector('.site-header')
     const logo = document.querySelector('.site-logo')
-    const secondaryNav = document.querySelector('.secondary-nav')
-    const secondaryNavTrigger = document.querySelector('.secondary-nav-trigger')
+    const a11y_ariaexpanded = document.querySelectorAll('[aria-expanded="false"]')
+    const menuItems = document.querySelectorAll('#site-header-main-nav > ul > .menu-item-has-children')
+    const menuBtn = document.getElementById('menu-btn')
+    const overlay = document.getElementById('overlay')
+    const menuMobile = document.getElementById('menu-mobile') 
+    const pageWrapper = document.getElementById('site-content-wrapper')
+    const accordionMenuItems = document.querySelectorAll('[data-toggle-menu-items]')
+    const footer = document.getElementById('site-footer')
 
-    let prevScrollPos = 0
 
+    /**
+     * Check if iOS, then set --vh
+     */
+    if (isIOS && window.matchMedia("(max-width: 1024px)").matches) {
+        $('html').addClass('is-ios')
+    }
+    
+    function set100vh() {
+        // If window size is iPad or smaller, then use JS to set screen height.
+        if (isIOS && window.matchMedia("(max-width: 1024px)").matches) {
+            vh = `${window.innerHeight}px`
+            document.documentElement.style.setProperty("--vh", vh)
+        }
+    }
+    set100vh()
+
+    /**
+     * WAI-ARIA toggle aria-expanded
+     */
+    function updateAriaExpanded(item){
+        const ariaexpanded = item.getAttribute('aria-expanded')
+        if (ariaexpanded == 'true') {
+            item.setAttribute('aria-expanded', 'false')
+        } else {
+            item.setAttribute('aria-expanded', 'true')
+        }
+    }
+    a11y_ariaexpanded.forEach((item) => {
+        item.addEventListener('click', function () {
+            updateAriaExpanded(this)
+        })
+    })
+
+ 
     /**
      * Get header height
      */
@@ -38,20 +79,14 @@ window.addEventListener('load', (event) => {
     getHeaderHeight()
 
     /**
-     * Get secondary nav height
-     */
-    function getSecondaryNavHeight(){
-        document.documentElement.style.setProperty("--secondary-nav-height", `${secondaryNav.clientHeight}px`)
-    }
-
-    if(secondaryNav !== null) getSecondaryNavHeight()
-
-    /**
      * Hide header if scrolling down, show if scrolling up
      */
-    window.addEventListener('scroll', () => {
 
-        const currentScrollPos = window.scrollY
+    window.addEventListener('scroll', () => {
+        
+        currentScrollPos = window.scrollY
+
+        // const currentScrollPos = window.scrollY
 
         //if you start scrolling add class
         if (currentScrollPos > 0) {
@@ -65,12 +100,10 @@ window.addEventListener('load', (event) => {
         if (prevScrollPos > 0 && prevScrollPos < currentScrollPos ) {
             header.classList.add('is-hidden')
             logo.classList.add('is-visible')
-            if(secondaryNav !== null) secondaryNav.classList.remove('is-stacked')
             overlay.classList.remove('is-active')
         } else if (prevScrollPos >= currentScrollPos) {
             header.classList.remove('is-hidden')
             logo.classList.remove('is-visible')
-            if(secondaryNav !== null) secondaryNav.classList.add('is-stacked')
         }
         
         prevScrollPos = currentScrollPos
@@ -78,204 +111,175 @@ window.addEventListener('load', (event) => {
     })
 
     /**
-     * Submenu
+     * Menu
      */
-    const menuItems = document.querySelectorAll('.menu-item-has-children')
-    const overlay = document.getElementById('overlay'
-    )
-    menuItems.forEach(item => {
-        item.addEventListener('mouseenter', function(){
-            item.classList.add('is-hovered')
-            overlay.classList.add('is-active')
-        })
-        item.addEventListener('mouseleave', function(){
-            item.classList.remove('is-hovered')
-            overlay.classList.remove('is-active')
-        })
-    })
 
-    /**
-     * Marquees 
-     */
-    const marquees = document.querySelectorAll('.block-marquee-posts-row')
-    let marqueesCardWidth
-    if (marquees.length > 0){
-        marqueesCardWidth = window.getComputedStyle(marquees[0]).getPropertyValue('--marquee-card-width')
+    function toggleMenuSharedElements(){
+               
+        if (!menuIsOpen) {
+            body.classList.add('has-menu-toggled')
+            menuBtn.classList.add('is-active')
+            menuBtn.classList.add('is-toggled')
+            overlay.classList.add('is-active')
+            menuIsOpen = true
+        } else {
+            body.classList.remove('has-menu-toggled')
+            menuBtn.classList.remove('is-active')
+            menuBtn.classList.remove('is-toggled')
+            overlay.classList.remove('is-active')
+            menuIsOpen = false
+        }
+
     }
 
-    marquees.forEach(marquee => {
-
-        const marqueeSpeed = Number(marquee.getAttribute('data-marquee-row-speed'))
-
-        let marqueePos = 0
-        let marqueeIntvl
+    // when menu is toggled, set margin top based
+    // on scrolled px and restore scroll after menu is closed
+    function setScrolledMarginContent(scrolled){
+        if (mobileMenuIsOpen || desktopMenuIsOpen) {
+            pageWrapper.style.marginTop = 0
+            document.body.scrollTop = menuToggledScrollPos
+            document.body.scrollTop = menuToggledScrollPos
+            document.documentElement.scrollTop = menuToggledScrollPos
+        } else {
+            pageWrapper.style.marginTop = `-${scrolled}px`
+        }
+        menuToggledScrollPos = scrolled
+    }
     
-        //get vars
-        const items = marquee.getAttribute('data-marquee-row-items')
-        const wrapper = marquee.querySelector('.block-marquee-posts-row__wrapper')
+    function toggleMobileMenu(forceClosing = null){
+        if (forceClosing) {
+            menuMobile.classList.remove('is-toggled')
+        } else {
+            menuMobile.classList.toggle('is-toggled')
+        }
+        closeAllAccordionMenuItems()
+        // set margin on page wapper 
+        // and restore scrolled position when you close menu
+        setScrolledMarginContent(currentScrollPos)
+        menuIsOpen ? mobileMenuIsOpen = true : mobileMenuIsOpen = false    
+    }
 
-        //clone cards in marquee
-        const cards = wrapper.querySelectorAll('.card')
-        cards.forEach(card => {
-            wrapper.appendChild(card.cloneNode(true))
-        })
-
-        //calculate wrapper width
-        wrapper.style.width = `calc(${items*2}*${marqueesCardWidth})`
-
-        marqueeIntvl = setInterval(() => {
-            if (marqueePos > 50) {
-                wrapper.style.transform = `translateX(0%)`    
-                marqueePos = 0
+    function toggleDesktopMenu(clickedItem = null){
+        menuItems.forEach((item) => { 
+            if (item == clickedItem) {
+                item.classList.add('is-toggled')
             } else {
-                wrapper.style.transform = `translateX(-${marqueePos}%)`
-            }
-            marqueePos = marqueePos+marqueeSpeed
-        }, 0)
-
-        marquee.addEventListener('mouseover', function(){
-            clearInterval(marqueeIntvl)
-        })
-
-        marquee.addEventListener('mouseleave', function(){
-            marqueeIntvl = setInterval(() => {
-                if (marqueePos > 50) {
-                    wrapper.style.transform = `translateX(0%)`    
-                    marqueePos = 0
-                } else {
-                    wrapper.style.transform = `translateX(-${marqueePos}%)`
-                }
-                marqueePos = marqueePos+marqueeSpeed
-            }, 0)    
-        })
-
-    })
-
-    /**
-     * Cards hover effect
-     */
-    const cards = document.querySelectorAll('.card')
-    cards.forEach(card => {
-        const marqueeWrapper = card.closest('.block-marquee-posts-row')
-        card.addEventListener('mouseenter', function(){
-            this.classList.add('is-hovered')
-            if (marqueeWrapper){
-                marqueeWrapper.classList.add('is-hovered')
+                item.classList.remove('is-toggled') 
             }
         })
-        card.addEventListener('mouseleave', function(){
-            this.classList.remove('is-hovered')
-            if (marqueeWrapper){
-                marqueeWrapper.classList.remove('is-hovered')
+        // set margin on page wapper  
+        // and restore scrolled position when you close menu
+        setScrolledMarginContent(currentScrollPos)
+        menuIsOpen ? desktopMenuIsOpen = true : desktopMenuIsOpen = false
+    }
+
+    function toggleMenuWhenResized(){
+        // if mobile menu is open and window resized to desktop
+        if (mobileMenuIsOpen && isDesktop.matches){
+            toggleMenuSharedElements()
+            toggleMobileMenu(true)
+            menuIsOpen = false
+        }
+        // if desktop menu is open and window resized to mobile
+        if (desktopMenuIsOpen && !isDesktop.matches){
+            toggleMenuSharedElements()
+            toggleDesktopMenu()
+            menuIsOpen = false
+        }
+    }
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(e){
+            e.preventDefault()
+            if (item.classList.contains('is-toggled')) {
+                toggleMenuSharedElements()
+                toggleDesktopMenu()
+            } else if (desktopMenuIsOpen){
+                toggleDesktopMenu(this)
+            } else {
+                toggleMenuSharedElements()
+                toggleDesktopMenu(this)
             }
         })
     })
-
-    /**
-     * Homepage Hero Banner parallax effect
-     */
-    const parallaxImages = document.querySelectorAll('[data-banner-scroll-image]')
-
-    document.addEventListener('scroll', function(){
-        const scrollPosition = window.scrollY
-        parallaxImages.forEach(image => {
-
-            const imageSpeed = image.getAttribute('data-banner-scroll-image-parallax-speed')
-            const imagePos = scrollPosition * imageSpeed
-            image.style.transform = `translateY(-${imagePos}px)`
-
-            scrollBannerObserver.observe(image)
-
-        })
-    })
-
     
-    let scrollBannerObserver = new IntersectionObserver((entries) => { 
+    menuBtn.addEventListener('click', function(){
+        toggleMenuSharedElements()
+        if (isDesktop.matches) {
+            toggleDesktopMenu()
+        } else {
+            toggleMobileMenu()
+        }
+    })
+  
+    //close all accordion menu items
+    function closeAllAccordionMenuItems(){
+        accordionMenuItems.forEach(item => {
+            item.parentElement.parentElement.classList.remove('is-toggled')
+            item.parentElement.parentElement.setAttribute('aria-expanded', 'false')
+        })
+    }
+
+    accordionMenuItems.forEach(button => {
+        button.addEventListener('click', function(){
+            // get <li>
+            const clickedItem = this.parentElement.parentElement
+            // get nesting of clicked item (from button)
+            const nesting = this.getAttribute('data-toggle-menu-items')
+
+            if (nesting == 0 && clickedItem.classList.contains('is-toggled')) {
+                // if is first level and already opened, 
+                // when clicked close all items
+                closeAllAccordionMenuItems()
+            } else {
+                // when you click on item, close other items on same nesting level
+                [...document.querySelectorAll(`[data-toggle-menu-items="${nesting}"]`)].forEach(i=>{if(this != i){i.parentElement.parentElement.classList.remove('is-toggled')}})
+                // toggle clicked item
+                clickedItem.classList.toggle('is-toggled')
+            }
+        })
+    })
+
+    /**
+     * Back to top
+     */
+    document.getElementById('backToTop').addEventListener('click', function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    })
+
+    /**
+     * Footer observer
+     */
+    //when footer is in viewport, restore logo position
+    let footerObserver = new IntersectionObserver((entries) => { 
         
         entries.forEach(entry => {
-                       
-            if(entry.isIntersecting && (entry.target.getBoundingClientRect().top > 0)){
-                entry.target.classList.add('is-visible')
-                entry.target.style.opacity = entry.intersectionRatio
-            }
-
-        })
-
-    }, 
-    {
-        rootMargin: "0px 0px 0px 0px",
-        threshold: [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
-    })
-
-    /**
-     * Tease height transition
-     */
-    function updateTeaseHeight(tease){
-        const teaseHeight = tease.clientHeight
-        const teaseImg = tease.querySelector('.tease__img')
-        const teaseText = tease.querySelector('.tease__main')
-        const teaseTextHeight = teaseText.clientHeight
-        teaseImg.style.height = `${teaseHeight-teaseTextHeight}px`
-        teaseText.style.marginTop = `${teaseHeight-teaseTextHeight}px`
-    }
-
-    const teaseItems = document.querySelectorAll('.tease')
-    teaseItems.forEach(tease => {
-        updateTeaseHeight(tease)        
-    })
-
-    /**
-     * Accordion
-     */
-    const accordions = document.querySelectorAll('[data-accordion]')
-    accordions.forEach(accordion => {
-        const title = accordion.querySelector('[data-accordion-title]')
-        const content = accordion.querySelector('[data-accordion-content]')
-        title.addEventListener('click', function(){
-            [...accordions].forEach(item => { item.classList.remove('is-toggled'); item.querySelector('[data-accordion-content]').style.display = 'none'})
-            accordion.classList.toggle('is-toggled')
-            content.style.display = content.style.display == 'none' ? 'block' : 'none';
-        })
-    })
-
-    /**
-     * Secondary Nav
-     */
-    let secondaryNavObserver = new IntersectionObserver((entries) => { 
-        entries.forEach(entry => {
-            if(!entry.isIntersecting){
-                secondaryNav.classList.add('is-visible')
+            if(entry.isIntersecting){
+                body.classList.add('footer-in-viewport')
             } else {
-                secondaryNav.classList.remove('is-visible')
+                body.classList.remove('footer-in-viewport')
             }
         })
+
     }, 
     {
-        threshold: 1,
-        rootMargin: '-1px 0px 0px 0px'
+        rootMargin: '0px'
     })
-
-    if(secondaryNav !== null) secondaryNavObserver.observe(secondaryNavTrigger)
-
-    function getSecondaryNavButtonWidth(){
-        const secondaryNavButtonWidth = secondaryNav.querySelector('.secondary-nav__btn').clientWidth
-        secondaryNav.style.setProperty("--secondary-nav-button-width", `${secondaryNavButtonWidth}px`)
-    }
-    if(secondaryNav !== null) getSecondaryNavButtonWidth()
+    footerObserver.observe(footer)
 
     /**
      * Window resize function callbacks
      */
     const resizeHandler = function(){
+        // set vh
+        set100vh()
         // get header height
         getHeaderHeight()
-        // if secondary nav exists
-        if(secondaryNav !== null) getSecondaryNavHeight()
-        if(secondaryNav !== null) getSecondaryNavButtonWidth()
-        //resize tease posts
-        teaseItems.forEach(tease => {
-            updateTeaseHeight(tease)        
-        })    
+        // when resizing disable menu if toggled
+        toggleMenuWhenResized()
     }
     window.addEventListener('resize', resizeHandler)
 

@@ -1,12 +1,40 @@
-{% if items %}
-    <ul class="site-header-navbar-submenu site-header-navbar-submenu-{{nesting}}">
+{% if accordion %}
+    {% if items %}
+        {% set last_level = true %}
         {% for sub_item in items %}
-            <li>
-                <a href="{{sub_item.url}}">{{sub_item.name}}</a>
-                {% if sub_item.children %}
-                    {% include "./menu.twig" with {"items": sub_item.children, "nesting": nesting+1 } %}
-                {% endif %}
-            </li>
+            {% if sub_item.children %}
+                {% set last_level = false %}
+            {% endif %}
         {% endfor %}
-    </ul>
+        <ul class="{{key}} {{key}}-{{nesting}}{% 
+        if last_level %} menu-mobile-level-last{% endif %}">
+            {% for sub_item in items %}
+                <li aria-expanded="false">
+                    <div class="menu-mobile-accordion-container">
+                        <a href="{{sub_item.url}}">{{sub_item.name}}</a>
+                        {% if sub_item.children %}
+                            <button data-toggle-menu-items="{{nesting}}" role="button">{% include "../../assets/img/icons/chevron.svg" %}</button>
+                        </div> {# menu-mobile-accordion-container #}
+                            {% include "./menu.twig" with {"items": sub_item.children, "nesting": nesting+1 } %}
+                        {% else %}
+                        </div> {# menu-mobile-accordion-container #}
+                        {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% else %}
+    {% if items %}
+        <ul class="{{key}} {{key}}-{{nesting}}">
+            {% for sub_item in items %}
+                <li>
+                    <a href="{{sub_item.url}}">{{sub_item.name}}</a>
+                    {% if sub_item.children %}
+                        {% include "./menu.twig" with {"items": sub_item.children, "nesting": nesting+1 } %}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endif %}
+

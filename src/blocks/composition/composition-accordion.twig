@@ -1,0 +1,7 @@
+<div class="block-container block-composition block-composition-accordion">
+
+    {% include "../title.twig" with {'block': block.inner_blocks.title } %}
+    {% include "../paragraph.twig" with {'block': block.inner_blocks.paragraph } %}
+    {% include "../accordion.twig" with {'block': block.inner_blocks.accordion } %}
+
+</div>

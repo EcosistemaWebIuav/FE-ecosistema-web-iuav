@@ -1,0 +1,24 @@
+{# 
+ # Blocco query loop
+ #}
+ 
+<div class="block-container block-{{key}} {{block.classes}}">
+    <div class="{{block.key}}__inner" style="--query-loop-columns-per-row:{{block.columns}}">
+        {% for post in post_type[block.query.post_type].items %}
+            <a href="#" class="tease">
+                
+                <p class="tease__title">{{post.title}}</p>
+
+                <div class="tease__img">
+                {% if post.featured_image %}
+                    {% include "../layout/partials/picture.twig" with {"image": post.featured_image } %}
+                {% endif %}
+                </div>
+                
+                <div class="tease__excerpt">
+                    <p>{{post.excerpt}}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>

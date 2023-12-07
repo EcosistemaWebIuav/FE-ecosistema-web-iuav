@@ -1,10 +1,13 @@
 .block-paragraph{
+    p{
+        @apply md:max-xl:max-w-3xl text-size-md;
+    }
     &--sm{
         p{
-            @apply text-size-sm;
+            @apply text-size-base;
         }
     }
     &--1col{
-        @apply lg:w-1/2;
+        @apply xl:w-1/2;
     }
 }

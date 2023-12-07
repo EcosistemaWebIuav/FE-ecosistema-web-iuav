@@ -1,6 +1,6 @@
 <div class="site-header-topbar">
     <div class="site-header-topbar__container grid-container">
-        <nav>
+        <nav aria-label="Link a servizi e contatti" role="navigation">
             <ul>
                 {% for item in blocks.header.topbar.nav %}
                     <li><a href="{{item.url}}">{{item.name}}</a></li>
@@ -8,8 +8,8 @@
             </ul>
         </nav>
         <div class="site-header-topbar__actions">
-            <div class="site-header-topbar__lang">EN</div>
-            <button class="site-header-topbar__search">
+            <a href="#" class="site-header-topbar__lang">EN</a>
+            <button class="site-header-topbar__search" role="button">
                 {% include "../../../assets/img/icons/search.svg" %}
             </button>
         </div>

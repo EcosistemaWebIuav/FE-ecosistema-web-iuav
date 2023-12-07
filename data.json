@@ -88,7 +88,7 @@
                                 "url": "#",
                                 "children": [
                                     {
-                                        "name": "Direzione genearle",
+                                        "name": "Direzione generale",
                                         "url": "#"
                                     },
                                     {
@@ -127,7 +127,7 @@
                                     },
                                     {
                                         "name": "Laboratori",
-                                        "url": "#"
+                                        "url": "/pages/laboratori/index.html"
                                     },
                                     {
                                         "name": "Aggregazioni di ricerca",
@@ -243,7 +243,65 @@
                     },
                     {
                         "name": "Didattica",
-                        "url": "#"
+                        "url": "#",
+                        "children": [
+                            {
+                                "name": "Chi siamo",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Piani, programmazione e strategie",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Accordi relazioni e convenzioni",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Sostenibilità",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Didattica",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Parità di genere",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Immagine coordinata",
+                                        "url": "#"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Amministrazione",
+                                "url": "#",
+                                "children": [
+                                    {
+                                        "name": "Direzione generale",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Area didattica e servizi agli studenti",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Area finanza e risorse umane",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Area ricerca, sistema bibliotecario e documentale",
+                                        "url": "#"
+                                    },
+                                    {
+                                        "name": "Area tecnica",
+                                        "url": "#"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "name": "Orientamento",
@@ -682,157 +740,181 @@
                         "parents": [1]
                     },
                     {
-                        "key": "title",
-                        "classes": "block-title--sm block-title--divider",
-                        "tag": "h2",
-                        "content": {
-                            "title": "Testo semplice",
-                            "link": null
-                        }
-                    },
-                    {
-                        "key": "paragraph",
-                        "classes": "block-paragraph--sm block-paragraph--1col",
-                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec felis sed mauris maximus dictum. Quisque rutrum odio at lacinia pellentesque. Integer in sapien purus. Donec finibus, odio nec accumsan porttitor, velit nisl feugiat felis, eget aliquam dui purus et mi. Nulla vel lacinia ligula. Vestibulum a malesuada ante, in luctus sapien. Maecenas maximus ac quam sit amet pulvinar. Nulla quis ornare felis. Pellentesque tempus, urna et fermentum aliquet, tortor ipsum mattis lectus, ac blandit massa libero pellentesque magna. Nunc dignissim eros nunc, non condimentum turpis tristique vel. Aenean efficitur lectus vel enim vulputate tempus. Sed tincidunt arcu at dui facilisis ullamcorper.</p><p><strong>Sottotitolo</strong>Aliquam ut ligula rutrum, iaculis lorem vel, blandit magna. Donec tempus ut arcu et porta. Sed sit amet sapien in metus bibendum aliquet. Nam porta facilisis augue. Sed pellentesque diam vitae dolor dapibus, at mollis nisi rhoncus. Sed non ultrices enim. Nulla volutpat lacinia nunc eget viverra. Cras tristique est id lorem blandit malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>"
-                    },
-                    {
-                        "key": "title",
-                        "classes": "block-title--sm block-title--divider",
-                        "tag": "h2",
-                        "content": {
-                            "title": "Bottoni download",
-                            "link": null
-                        }
-                    },
-                    {
-                        "key": "paragraph",
-                        "classes": "block-paragraph--sm block-paragraph--1col",
-                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
-                    },
-                    {
-                        "key": "files-list",
+                        "key": "composition/composition-text",
                         "classes": "",
-                        "content": {
-                            "items": [
-                                {
-                                    "name": "Bottone di download",
-                                    "url": "#"
-                                },
-                                {
-                                    "name": "Bottone di download",
-                                    "url": "#"
-                                },
-                                {
-                                    "name": "Bottone di download",
-                                    "url": "#"
+                        "inner_blocks": {
+                            "title": {
+                                "key": "title",
+                                "classes": "block-title--sm block-title--divider",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Testo semplice",
+                                    "link": null
                                 }
-                            ]
+                            },
+                            "paragraph": {
+                                "key": "paragraph",
+                                "classes": "block-paragraph--sm block-paragraph--1col",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec felis sed mauris maximus dictum. Quisque rutrum odio at lacinia pellentesque. Integer in sapien purus. Donec finibus, odio nec accumsan porttitor, velit nisl feugiat felis, eget aliquam dui purus et mi. Nulla vel lacinia ligula. Vestibulum a malesuada ante, in luctus sapien. Maecenas maximus ac quam sit amet pulvinar. Nulla quis ornare felis. Pellentesque tempus, urna et fermentum aliquet, tortor ipsum mattis lectus, ac blandit massa libero pellentesque magna. Nunc dignissim eros nunc, non condimentum turpis tristique vel. Aenean efficitur lectus vel enim vulputate tempus. Sed tincidunt arcu at dui facilisis ullamcorper.</p><p><strong>Sottotitolo</strong><br>Aliquam ut ligula rutrum, iaculis lorem vel, blandit magna. Donec tempus ut arcu et porta. Sed sit amet sapien in metus bibendum aliquet. Nam porta facilisis augue. Sed pellentesque diam vitae dolor dapibus, at mollis nisi rhoncus. Sed non ultrices enim. Nulla volutpat lacinia nunc eget viverra. Cras tristique est id lorem blandit malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>"
+                            }
                         }
                     },
                     {
-                        "key": "title",
-                        "classes": "block-title--sm block-title--divider",
-                        "tag": "h2",
-                        "content": {
-                            "title": "Accordion di testo",
-                            "link": null
-                        }
-                    },
-                    {
-                        "key": "paragraph",
-                        "classes": "block-paragraph--sm block-paragraph--1col",
-                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
-                    },
-                    {
-                        "key": "accordion",
-                        "classes": "block-accordion--sm block-accordion--2cols",
-                        "content": {
-                            "items": [
-                                {
-                                    "title": "Titolo accordion 1",
-                                    "content": {
-                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-                                    }
-                                },
-                                {
-                                    "title": "Titolo accordion 2",
-                                    "content": {
-                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-                                    }
-                                },
-                                {
-                                    "title": "Titolo accordion 3",
-                                    "content": {
-                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-                                    }
-                                },
-                                {
-                                    "title": "Titolo accordion 4",
-                                    "content": {
-                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-                                    }
-                                },
-                                {
-                                    "title": "Titolo accordion 5",
-                                    "content": {
-                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "key": "title",
-                        "classes": "block-title--sm block-title--divider",
-                        "tag": "h2",
-                        "content": {
-                            "title": "Lista elementi",
-                            "link": null
-                        }
-                    },
-                    {
-                        "key": "paragraph",
-                        "classes": "block-paragraph--sm block-paragraph--1col",
-                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
-                    },
-                    {
-                        "key": "grid-list",
+                        "key": "composition/composition-files-list",
                         "classes": "",
-                        "content": {
-                            "items": [
-                                {
-                                    "label": "List",
-                                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."    
-                                },
-                                {
-                                    "label": "List",
-                                    "text": "Nunc ac purus id turpis pretium porta. Morbi lacinia nunc laoreet imperdiet volutpat. Sed nec nunc finibus, blandit erat quis, placerat orci. Donec at mauris ut lorem dictum fermentum nec sed velit."    
-                                },
-                                {
-                                    "label": "List",
-                                    "text": "Donec lacinia justo nec justo dictum tristique. Maecenas volutpat, nunc a aliquam lobortis, diam magna ultrices nisl, eu pretium eros mi ultricies enim. Cras dignissim sit amet mauris in ornare."    
-                                },
-                                {
-                                    "label": "List",
-                                    "text": "In id leo ut purus tempus placerat. Fusce ac pulvinar tellus, non lobortis est. Mauris sagittis ligula quis augue auctor ultrices. Curabitur sit amet egestas neque. Duis vulputate est id dignissim tempus. Nulla quis consectetur felis. Aenean volutpat velit tincidunt, viverra velit sed, hendrerit quam."    
-                                },
-                                {
-                                    "label": "List",
-                                    "text": "Vivamus vel ipsum quis est interdum facilisis. Mauris et arcu est. Etiam ultricies finibus commodo. Phasellus auctor ex sed lacus tristique, sit amet eleifend odio tincidunt."    
-                                },
-                                {
-                                    "label": "List",
-                                    "text": "Suspendisse commodo lacus luctus libero auctor suscipit. Maecenas non ullamcorper turpis. In suscipit quam interdum venenatis faucibus. Nam consectetur vehicula neque, scelerisque elementum ipsum lobortis vitae."    
-                                },
-                                {
-                                    "label": "List",
-                                    "text": "Phasellus sit amet faucibus elit. Vivamus lorem mi, posuere et aliquam nec, placerat consequat eros. Praesent justo turpis, feugiat id magna ut, euismod venenatis lacus."    
-                                },
-                                {
-                                    "label": "List",
-                                    "text": "In hac habitasse platea dictumst. Maecenas lobortis ligula justo, vitae laoreet augue laoreet nec. Mauris faucibus tempor massa, eget sodales arcu elementum quis."    
+                        "inner_blocks": {
+                            "title": {
+                                "key": "title",
+                                "classes": "block-title--sm block-title--divider",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Bottoni download",
+                                    "link": null
                                 }
-                            ]
+                            },
+                            "paragraph": {
+                                "key": "paragraph",
+                                "classes": "block-paragraph--sm block-paragraph--1col",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                            },
+                            "files_list": {
+                                "key": "files-list",
+                                "classes": "",
+                                "content": {
+                                    "items": [
+                                        {
+                                            "name": "Bottone di download",
+                                            "url": "#"
+                                        },
+                                        {
+                                            "name": "Bottone di download",
+                                            "url": "#"
+                                        },
+                                        {
+                                            "name": "Bottone di download",
+                                            "url": "#"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "key": "composition/composition-accordion",
+                        "classes": "",
+                        "inner_blocks": {
+                            "title": {
+                                "key": "title",
+                                "classes": "block-title--sm block-title--divider",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Accordion di testo",
+                                    "link": null
+                                }
+                            },
+                            "paragraph": {
+                                "key": "paragraph",
+                                "classes": "block-paragraph--sm block-paragraph--1col",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"        
+                            },
+                            "accordion": {
+                                "key": "accordion",
+                                "classes": "block-accordion--sm block-accordion--2cols",
+                                "content": {
+                                    "items": [
+                                        {
+                                            "title": "Titolo accordion 1",
+                                            "content": {
+                                                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                            }
+                                        },
+                                        {
+                                            "title": "Titolo accordion 2",
+                                            "content": {
+                                                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                            }
+                                        },
+                                        {
+                                            "title": "Titolo accordion 3",
+                                            "content": {
+                                                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                            }
+                                        },
+                                        {
+                                            "title": "Titolo accordion 4",
+                                            "content": {
+                                                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                            }
+                                        },
+                                        {
+                                            "title": "Titolo accordion 5",
+                                            "content": {
+                                                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "key": "composition/composition-grid-list",
+                        "classes": "",
+                        "inner_blocks": {
+                            "title": {
+                                "key": "title",
+                                "classes": "block-title--sm block-title--divider",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Lista elementi",
+                                    "link": null
+                                }
+                            },
+                            "paragraph": {
+                                "key": "paragraph",
+                                "classes": "block-paragraph--sm block-paragraph--1col",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                            },
+                            "grid_list": {
+                                "key": "grid-list",
+                                "classes": "",
+                                "content": {
+                                    "items": [
+                                        {
+                                            "label": "List",
+                                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."    
+                                        },
+                                        {
+                                            "label": "List",
+                                            "text": "Nunc ac purus id turpis pretium porta. Morbi lacinia nunc laoreet imperdiet volutpat. Sed nec nunc finibus, blandit erat quis, placerat orci. Donec at mauris ut lorem dictum fermentum nec sed velit."    
+                                        },
+                                        {
+                                            "label": "List",
+                                            "text": "Donec lacinia justo nec justo dictum tristique. Maecenas volutpat, nunc a aliquam lobortis, diam magna ultrices nisl, eu pretium eros mi ultricies enim. Cras dignissim sit amet mauris in ornare."    
+                                        },
+                                        {
+                                            "label": "List",
+                                            "text": "In id leo ut purus tempus placerat. Fusce ac pulvinar tellus, non lobortis est. Mauris sagittis ligula quis augue auctor ultrices. Curabitur sit amet egestas neque. Duis vulputate est id dignissim tempus. Nulla quis consectetur felis. Aenean volutpat velit tincidunt, viverra velit sed, hendrerit quam."    
+                                        },
+                                        {
+                                            "label": "List",
+                                            "text": "Vivamus vel ipsum quis est interdum facilisis. Mauris et arcu est. Etiam ultricies finibus commodo. Phasellus auctor ex sed lacus tristique, sit amet eleifend odio tincidunt."    
+                                        },
+                                        {
+                                            "label": "List",
+                                            "text": "Suspendisse commodo lacus luctus libero auctor suscipit. Maecenas non ullamcorper turpis. In suscipit quam interdum venenatis faucibus. Nam consectetur vehicula neque, scelerisque elementum ipsum lobortis vitae."    
+                                        },
+                                        {
+                                            "label": "List",
+                                            "text": "Phasellus sit amet faucibus elit. Vivamus lorem mi, posuere et aliquam nec, placerat consequat eros. Praesent justo turpis, feugiat id magna ut, euismod venenatis lacus."    
+                                        },
+                                        {
+                                            "label": "List",
+                                            "text": "In hac habitasse platea dictumst. Maecenas lobortis ligula justo, vitae laoreet augue laoreet nec. Mauris faucibus tempor massa, eget sodales arcu elementum quis."    
+                                        }
+                                    ]
+                                }
+                            }
                         }
                     },
                     {
@@ -862,126 +944,133 @@
                             }
                         }
                     },
+
                     {
-                        "key": "title",
-                        "classes": "block-title--sm block-title--divider",
-                        "tag": "h2",
-                        "content": {
-                            "title": "Accordion in evidenza",
-                            "link": null
-                        }
-                    },
-                    {
-                        "key": "paragraph",
-                        "classes": "block-paragraph--sm block-paragraph--1col",
-                        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
-                    },
-                    {
-                        "key": "accordion",
+                        "key": "composition/composition-accordion",
                         "classes": "",
-                        "content": {
-                            "items": [
-                                {
-                                    "title": "Titolo accordion 1",
-                                    "inner_blocks": [
-                                        {
-                                            "key": "paragraph",
-                                            "classes": "",
-                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
-                                        },
-                                        {
-                                            "key": "links-list-columns",
-                                            "content": {
-                                                "list": [
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "Titolo accordion 2",
-                                    "content": {
-                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-                                    }
-                                },
-                                {
-                                    "title": "Titolo accordion 3",
-                                    "inner_blocks": [
-                                        {
-                                            "key": "paragraph",
-                                            "classes": "",
-                                            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
-                                        },
-                                        {
-                                            "key": "links-list-columns",
-                                            "content": {
-                                                "list": [
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    },
-                                                    {
-                                                        "name": "Link list item",
-                                                        "url": "#"
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "title": "Titolo accordion 4",
-                                    "content": {
-                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-                                    }
-                                },
-                                {
-                                    "title": "Titolo accordion 5",
-                                    "content": {
-                                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
-                                    }
+                        "inner_blocks": {
+                            "title": {
+                                "key": "title",
+                                "classes": "block-title--sm block-title--divider",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Accordion in evidenza",
+                                    "link": null
                                 }
-                            ]
+                            },
+                            "paragraph": {
+                                "key": "paragraph",
+                                "classes": "block-paragraph--sm block-paragraph--1col",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                            },
+                            "accordion": {
+                                "key": "accordion",
+                                "classes": "",
+                                "content": {
+                                    "items": [
+                                        {
+                                            "title": "Titolo accordion 1",
+                                            "inner_blocks": [
+                                                {
+                                                    "key": "paragraph",
+                                                    "classes": "",
+                                                    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                                                },
+                                                {
+                                                    "key": "links-list-columns",
+                                                    "content": {
+                                                        "list": [
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "title": "Titolo accordion 2",
+                                            "content": {
+                                                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                            }
+                                        },
+                                        {
+                                            "title": "Titolo accordion 3",
+                                            "inner_blocks": [
+                                                {
+                                                    "key": "paragraph",
+                                                    "classes": "",
+                                                    "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis dolor eu arcu interdum laoreet. Mauris sodales rhoncus tellus, nec placerat ligula elementum ultricies. Integer nec congue quam. Integer lobortis justo dui, eget gravida est vestibulum in quisque quis dolor eu arcu.</p>"
+                                                },
+                                                {
+                                                    "key": "links-list-columns",
+                                                    "content": {
+                                                        "list": [
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            },
+                                                            {
+                                                                "name": "Link list item",
+                                                                "url": "#"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "title": "Titolo accordion 4",
+                                            "content": {
+                                                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                            }
+                                        },
+                                        {
+                                            "title": "Titolo accordion 5",
+                                            "content": {
+                                                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
                         }
                     },
                     {
@@ -1018,6 +1107,93 @@
                                 ]
                             }
                         ]
+                    }
+                ]
+            },
+            {
+                "title": "Strutture didattiche, di ricerca e di servizio",
+                "url": "#",
+                "blocks": [
+                    {
+                        "key": "breadcrumbs",
+                        "post_type": "pages",
+                        "parents": []
+                    }
+                ]
+            },
+            {
+                "title": "Laboratori",
+                "url": "/pages/laboratori/index.html",
+                "blocks": [
+                    {
+                        "key": "breadcrumbs",
+                        "post_type": "pages",
+                        "parents": [3]
+                    },
+                    {
+                        "key": "paragraph",
+                        "classes": "block-paragraph--1col",
+                        "content": "<p>I laboratori costituiscono un supporto alle attività didattiche e di ricerca del dipartimento e dell’ateneo. Sono dotati di attrezzature all’avanguardia e competenze a elevato grado di specializzazione, svolgono attività scientifiche e professionali nei campi che spaziano dalla rappresentazione alle tecniche di costruzione.</p>"
+                    },
+                    {
+                        "key": "query-loop",
+                        "classes": "",
+                        "columns": 2,
+                        "query": {
+                            "post_type": "labs",
+                            "params": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Boilerplate",
+                "url": "/pages/boilerplate.html",
+                "blocks": [
+                    {
+                        "key": "breadcrumbs",
+                        "post_type": "pages",
+                        "parents": [1]
+                    },
+                    {
+                        "key": "composition/composition-text",
+                        "classes": "",
+                        "inner_blocks": {
+                            "title": {
+                                "key": "title",
+                                "classes": "block-title--sm block-title--divider",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Testo semplice",
+                                    "link": null
+                                }
+                            },
+                            "paragraph": {
+                                "key": "paragraph",
+                                "classes": "block-paragraph--sm block-paragraph--1col",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec felis sed mauris maximus dictum. Quisque rutrum odio at lacinia pellentesque. Integer in sapien purus. Donec finibus, odio nec accumsan porttitor, velit nisl feugiat felis, eget aliquam dui purus et mi. Nulla vel lacinia ligula. Vestibulum a malesuada ante, in luctus sapien. Maecenas maximus ac quam sit amet pulvinar. Nulla quis ornare felis. Pellentesque tempus, urna et fermentum aliquet, tortor ipsum mattis lectus, ac blandit massa libero pellentesque magna. Nunc dignissim eros nunc, non condimentum turpis tristique vel. Aenean efficitur lectus vel enim vulputate tempus. Sed tincidunt arcu at dui facilisis ullamcorper.</p>"
+                            }
+                        }
+                    },
+                    {
+                        "key": "composition/composition-text",
+                        "classes": "",
+                        "inner_blocks": {
+                            "title": {
+                                "key": "title",
+                                "classes": "block-title--sm block-title--divider",
+                                "tag": "h2",
+                                "content": {
+                                    "title": "Testo semplice",
+                                    "link": null
+                                }
+                            },
+                            "paragraph": {
+                                "key": "paragraph",
+                                "classes": "block-paragraph--sm block-paragraph--1col",
+                                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec felis sed mauris maximus dictum. Quisque rutrum odio at lacinia pellentesque. Integer in sapien purus. Donec finibus, odio nec accumsan porttitor, velit nisl feugiat felis, eget aliquam dui purus et mi. Nulla vel lacinia ligula. Vestibulum a malesuada ante, in luctus sapien. Maecenas maximus ac quam sit amet pulvinar. Nulla quis ornare felis. Pellentesque tempus, urna et fermentum aliquet, tortor ipsum mattis lectus, ac blandit massa libero pellentesque magna. Nunc dignissim eros nunc, non condimentum turpis tristique vel. Aenean efficitur lectus vel enim vulputate tempus. Sed tincidunt arcu at dui facilisis ullamcorper.</p><p><strong>Sottotitolo</strong><br>Aliquam ut ligula rutrum, iaculis lorem vel, blandit magna. Donec tempus ut arcu et porta. Sed sit amet sapien in metus bibendum aliquet. Nam porta facilisis augue. Sed pellentesque diam vitae dolor dapibus, at mollis nisi rhoncus. Sed non ultrices enim. Nulla volutpat lacinia nunc eget viverra. Cras tristique est id lorem blandit malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>"
+                            }
+                        }
                     }
                 ]
             }
@@ -1377,7 +1553,7 @@
                             "external_name": null
                         }
                     ],
-                    "abstract": "",
+                    "excerpt": "",
                     "content": "<p>Per chi sceglie Architettura, il luogo in cui si studia è particolarmente importante. E Venezia è la scuola del progetto. Studiare Architettura a Venezia significa vivere un'esperienza di studi unica, in una città che offre una lezione costante di storia, di arte, di sostenibilità.</p><p>I corsi di laurea in Architettura Iuav interpretano i bisogni di un mondo della professione in evoluzione: oggi un architetto deve essere in grado di leggere i luoghi, conoscerne la storia, coordinare competenze disciplinari diverse. Deve sapere comporre sensibilità umanistica, conoscenze tecniche e senso civico, per collaborare alla costruzione di spazi, città e ambienti sostenibili. Studiare Architettura a Venezia significa intraprendere un percorso orientato alla formazione di un progettista consapevole, capace di prendersi cura dell’ambiente fisico in cui vive una collettività e consegnarlo al futuro.</p><p>Il corso si caratterizza per il confronto continuo fra teoria e pratica, tra sapere e saper fare. Il laboratorio integrato è lo spazio della sperimentazione, dove chi studia verifica le conoscenze acquisite e le relazioni interdisciplinari che definiscono un progetto di architettura. Il percorso formativo trasmette le conoscenze culturali, metodologiche e tecniche che, alla fine del triennio, permettono al laureato di operare professionalmente con competenza e autonomia e offrire la base per proseguire gli studi con il corso di laurea magistrale. I workshop e i corsi monodisciplinari costruiscono un percorso ricco e articolato, che favorisce la maturazione di capacità critiche e pratico-operative. Il primo anno fornisce gli orizzonti culturali e i linguaggi di base; il secondo è dedicato alle tecniche costruttive e di controllo ambientale, mentre il terzo è focalizzato sul progetto urbano contemporaneo. L’esperienza centrale del triennio sono i workshop estivi di Architettura: tre settimane di progettazione intensiva sotto la guida di architetti di fama internazionale. Un’esperienza di straordinaria efficacia che non ha uguali nel mondo della formazione universitaria.</p>",
                     "content_image": {
                         "filename": "architettura-2",
@@ -1665,6 +1841,90 @@
                             ]
                         }
                     ]
+                }
+            ]
+        },
+        "labs": {
+            "items": [
+                {
+                    "title": "ArTec – Archivio delle tecniche e dei materiali",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "featured_image": {
+                        "filename": "lab-1",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "FisTec – Laboratorio di fisica tecnica ambientale",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "featured_image": {
+                        "filename": "lab-2",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "Circe – Laboratorio di fotogrammetria",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "featured_image": {
+                        "filename": "lab-3",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "Circe – Laboratorio di cartografia e GIS",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "featured_image": {
+                        "filename": "lab-4",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "LabSCo – Laboratorio di scienza delle costruzioni",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "featured_image": {
+                        "filename": "lab-5",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "LAMA – Laboratorio di analisi e materiali antichi",
+                    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc libero, fringilla id semper id, ornare pellentesque massa. Nam posuere luctus facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                    "featured_image": {
+                        "filename": "lab-6",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "LAR – Laboratorio di supporto al progetto",
+                    "excerpt": "LAR è una struttura per la ricerca e la didattica che offre servizi per il controllo e lo sviluppo di processi innovativi di rappresentazione dedicati al progetto di architettura, degli artefatti e della loro comunicazione, anche in rapporto alla tutela e alla valorizzazione del patrimonio artistico e culturale, tangibile e intangibile.",
+                    "featured_image": {
+                        "filename": "lab-7",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "MeLa – Media Lab",
+                    "excerpt": "Il Media Lab è una struttura che si occupa di ricerca, sperimentazione e sviluppo nel campo dell’interazione multisensoriale e delle nuove interfacce applicate alla comunicazione dell’architettura e del design, dei prodotti culturali e delle arti visive e performative.",
+                    "featured_image": {
+                        "filename": "lab-8",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "UserLab – Laboratory for user centered applied research",
+                    "excerpt": "Il laboratorio verifica i prodotti industriali, gli artefatti comunicativi (siti web, packaging, brand images, ecc.), i servizi e gli ambienti, studiando la risposta degli utenti con strumenti scientifico-sperimentali.",
+                    "featured_image": {
+                        "filename": "lab-9",
+                        "path": "/post_type/labs"
+                    }
+                },
+                {
+                    "title": "Laboratorio strumentale per la didattica",
+                    "excerpt": "Il laboratorio gestisce l’insieme dei laboratori per gli studenti mettendo a disposizione spazi, attrezzature e consulenza tecnica per sperimentare ed effettuare attività pratiche.",
+                    "featured_image": {
+                        "filename": "lab-10",
+                        "path": "/post_type/labs"
+                    }
                 }
             ]
         }

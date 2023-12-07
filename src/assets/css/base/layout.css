@@ -12,3 +12,21 @@ body{
 .content{
     @apply h-full;
 }
+
+body.has-menu-toggled{
+    #site-content-wrapper{
+        @apply 
+            fixed top-[var(--header-height)] left-0 w-full
+            /* xl:relative */
+        ;
+    }
+}
+
+.skip-link{
+    @apply block h-0 absolute -top-[9999px] -left-[9999px];
+    a{
+        &:focus{
+            @apply fixed top-5 left-5 h-auto bg-white text-black border border-black p-4 z-50;
+        }
+    }
+}

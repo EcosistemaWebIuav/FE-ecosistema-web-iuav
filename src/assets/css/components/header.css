@@ -1,12 +1,15 @@
 .site-header{
     transition: transform .5s ease;
     @apply z-50;
-    @apply sticky top-0 z-50 translate-y-0;
+    @apply sticky top-0 z-40 translate-y-0;
+    @at-root body.has-menu-toggled .site-header{
+        @apply border-b border-black md:border-b-0;
+    }
     &.is-hidden{
-        @apply translate-y-[-100%];
+        @apply xl:translate-y-[-100%];
     }
     &-topbar{
-        @apply bg-black text-white py-[0.75vw] flex items-center;
+        @apply bg-black text-white h-10 hidden xl:flex items-center;
         &__container{
             @apply flex items-center justify-between text-size-sm;
             nav{
@@ -35,24 +38,37 @@
         }
     }
     &-navbar{
-        @apply py-[1.25vw] flex items-center bg-white;
-        &__container{
-            .site-header-navbar__main{
+        @apply h-12.5 xl:h-15 flex items-center bg-white;
+        &__inner{
+            @apply grid-container flex items-center justify-between;
+        }
+        &__main{
+            @apply xl:w-3/4 flex justify-between items-center;
+            nav{
+                @apply hidden xl:block;
                 > ul{
                     @apply flex items-center;
                     > li{
-                        a{
-                            @apply text-size-base;
-                        }
                         &:not(:last-child){
-                            @apply mr-8;
+                            @apply mr-6 xl:mr-8;
+                        }
+                        &.is-toggled{
+                            > a{
+                                @apply font-bold;
+                            }
                         }
                     }
                 }
             }
+            .hamburger-btn{
+                @apply xl:hidden translate-x-[calc(var(--grid-gutter)*1.75)] xl:translate-x-[calc(var(--grid-gutter)*1.25)];
+                &.is-active{
+                    @apply xl:flex;
+                }
+            }
         }
         &__title{
-            @apply font-bold text-size-base;
+            @apply font-bold xl:w-1/4;
         }
         &-submenu{
             > li{
@@ -64,8 +80,20 @@
             &-0{
                 padding-left: var(--grid-offset);
                 padding-right: calc(var(--grid-gutter) * 2);
-                @apply absolute left-0 w-full bg-white columns-3 pt-10 pb-6 gap-x-5 opacity-0 invisible pointer-events-none;
-                @at-root .site-header-navbar__main ul li.is-hovered .site-header-navbar-submenu-0{
+                @apply 
+                    absolute
+                    bottom-0 
+                    left-0 
+                    translate-y-[100%]
+                    w-full 
+                    bg-white 
+                    columns-3 
+                    pt-10
+                    pb-12.5
+                    gap-x-[calc(var(--gutter-grid)*2)] 
+                    opacity-0 invisible pointer-events-none
+                ;
+                @at-root .site-header-navbar__main ul li.is-toggled .site-header-navbar-submenu-0{
                     @apply opacity-100 visible pointer-events-auto;
                 }
                 @at-root .site-header.is-hidden .site-header-navbar__main .site-header-navbar-submenu-0{
@@ -79,11 +107,11 @@
                 }
             }
             &:not(.site-header-navbar-submenu-0){
-                @apply grid grid-cols-4 gap-x-5;
                 > li{
-                    grid-column: 2 / 5;
-                    @apply border-t border-grey-400;
+                    @apply border-t border-grey-200;
+                    @apply grid grid-cols-4 gap-x-[var(--size-ratio-base)];
                     > a{
+                        grid-column: 2 / 5;
                     }
                 }
             }
@@ -92,7 +120,7 @@
 }
 
 #overlay{
-    @apply fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 z-10 opacity-0 invisible pointer-events-none;
+    @apply fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 z-30 opacity-0 invisible pointer-events-none;
     &.is-active{
         @apply opacity-100 visible;
     }

@@ -1,0 +1,28 @@
+<div class="menu-mobile" id="menu-mobile">
+	<nav class="menu-mobile__secondary" aria-label="Link a servizi e contatti" role="navigation">
+		<ul>
+			{% for item in blocks.header.topbar.nav %}
+				<li>
+					<a href="{{item.url}}">{{item.name}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+    <nav class="menu-mobile__primary" id="mobile-menu-main-nav" aria-label="Menu principale" role="navigation">
+        <ul class="menu-mobile-level-0">
+            {% for item in blocks.header.navbar.nav %}
+                <li class="{% if item.children %} menu-item-has-children{% endif %}" aria-expanded="false">
+                    <div class="menu-mobile-accordion-container">
+                        <a href="{{item.url}}">{{item.name}}</a>
+                        {% if item.children %}
+                            <button data-toggle-menu-items="0">{% include "../../assets/img/icons/chevron.svg" %}</button>
+                            </div> {# menu-mobile-item-container #}
+                            {% include "./menu.twig" with {"items": item.children, "key": "menu-mobile-level", "nesting": 1, "accordion": true } %}
+                        {% else %}
+                            </div> {# menu-mobile-item-container #}
+                        {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>

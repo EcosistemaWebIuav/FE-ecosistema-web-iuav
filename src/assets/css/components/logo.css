@@ -1,15 +1,17 @@
 .site-logo{
     transition: all .2s ease;
-    /* top: calc(100px + 32px); */
-    /* transform: translateY(8%) translateX(0); */
-    /* transform: translateY(0) translateX(-50%); */
-    @apply fixed bottom-[2.75vw] left-[2.75vw] z-50 mix-blend-difference;
+    transform: translateY(0) translateX(-2px);
+    @apply hidden md:block fixed bottom-10 left-10 z-20 mix-blend-difference;
     svg{
-        width: 2.75vw;
+        width: 40px;
         @apply block;
     }
     &.is-visible{
         transform: translateY(0) translateX(-50%);
         @apply left-0;
+    }
+    @at-root body.footer-in-viewport .site-logo.is-visible{
+        transform: translateY(0) translateX(-2px);
+        @apply left-10;
     }
 }

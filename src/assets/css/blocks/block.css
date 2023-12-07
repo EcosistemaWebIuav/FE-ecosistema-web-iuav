@@ -1,0 +1,10 @@
+.block-container{
+    @apply row;
+    :where(.block-container), :where(.grid-container){
+        @apply w-full ml-0 px-0;
+    }
+}
+
+.block-composition{
+    @apply mb-12.5 md:mb-20;
+}

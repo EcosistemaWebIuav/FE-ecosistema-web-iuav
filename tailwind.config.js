@@ -4,23 +4,26 @@ module.exports = {
     content: ['./src/**/*.twig'],
     safelist: ['mt-12', 'mt-16', 'mt-20', 'mt-24', 'mt-32', 'mt-40', 'mb-16', 'mb-20', 'mb-24', 'mb-32', 'mb-40'],
     theme: {
+        screens: {
+            'sm': '40rem',
+            'md': '48rem',
+            'lg': '64rem',
+            'xl': '80rem',
+            '2xl': '120rem',
+            '3xl': '128rem'
+        },
         fontFamily: {
             sans: ['Standard', 'sans-serif']
         },
         fontSize: {
-            'xs': '.75rem',
-            'sm': '.8125rem',
-            'base': '1rem',
-            'lg': '1.125rem',
-            'xl': '1.25rem',
-            '2xl': '1.5rem',
-            '3xl': '1.875rem',
-            '4xl': '2.375rem',
-            '5xl': '2.875rem',
-            '6xl': '3rem',
-            '7xl': '3.5rem',
-            '8xl': '4rem',
-            '9xl': '4.25rem'
+            'sm': ['13px', '20px'],
+            'base': ['16px', '25px'],
+            'md': ['20px', '30px'],
+            'md-lg': ['26px', '35px'],
+            'lg': ['30px', '40px'],
+            'xl': ['44px', '55px'],
+            '2xl': ['58px', '70px'],
+            '3xl': ['90px', '105px']
         },
         colors: {
             yellow: "#FFCC00",
@@ -39,6 +42,22 @@ module.exports = {
             transparent: 'transparent'
         },
         extend: {
+            spacing: {
+                '15': '3.75rem',
+                'xs': 'calc(var(--spacing-size)/2)',
+                'sm': 'calc(var(--spacing-size))',
+                'base': 'calc(var(--spacing-size)*2)',
+                'lg': 'calc(var(--spacing-size)*2.5)',
+                'xl': 'calc(var(--spacing-size)*4)',
+                'xxl': 'calc(var(--spacing-size)*5)',
+                'xxxl': '5rem',
+                '3.75': '0.9375rem',
+                '6.25': '1.5625rem',
+                '7.5': '1.875rem',
+                '8.75': '2.1875rem',
+                '12.5': '3.125rem',
+                '25': '6.25rem'
+            },
             lineHeight: {
             }
         }

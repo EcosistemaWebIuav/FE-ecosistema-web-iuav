@@ -1,9 +1,9 @@
 .block-title{
-    @apply mb-[2.75vw];
+    @apply mb-3.75 md:mb-8.75;
     h1,h2,h3,h4,h5,h6{
-        @apply text-size-xxl mb-0;
+        @apply text-size-2xl mb-0;
         + a{
-            @apply text-grey-300 shrink-0 ml-[1vw];
+            @apply text-grey-300 shrink-0 ml-4;
         }
     }
     .block-title__inner{
@@ -22,20 +22,16 @@
     }
     &--lg{
         h1,h2,h3,h4,h5,h6{
-            @apply text-size-xxxl;
+            @apply text-size-3xl;
         }    
     }
     &--divider{
         .block-title__inner{
-            @apply border-t border-black pt-[0.8vw] w-full;
+            @apply border-t border-black pt-3 w-full;
         }
     }
 }
 
-.breadcrumbs + .block-container{
+/* .block-container + .block-title{
     @apply mt-[5.5vw]
-}
-
-.block-container + .block-title{
-    @apply mt-[5.5vw]
-}
+} */

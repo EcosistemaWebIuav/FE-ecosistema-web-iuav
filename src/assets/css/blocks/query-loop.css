@@ -1,0 +1,9 @@
+.query-loop{
+    &__inner{
+        grid-template-columns: repeat(1, minmax(0,1fr));
+        @screen lg{
+            grid-template-columns: repeat(var(--query-loop-columns-per-row), minmax(0, 1fr));
+        }
+        @apply grid gap-x-[var(--size-ratio-base)] gap-y-[var(-xl)];
+    }
+}
