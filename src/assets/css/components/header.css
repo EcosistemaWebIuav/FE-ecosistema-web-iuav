@@ -129,7 +129,7 @@
                     @apply break-inside-avoid;
                     > .menu-item{
                         > a{
-                            @apply font-bold border-t-2 border-grey-400;
+                            @apply font-bold border-t border-black;
                         }
                     }
                 }
